@@ -1,1 +1,1650 @@
 
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Virtual Fitness Ecosystem | Pre-Seed Investor Pitch (Melbourne, VIC)</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            voidbg: '#090E1A',
+            panelbg: '#10182B',
+            panelhover: '#16213A',
+            lineborder: '#1E293B',
+            emeraldbolt: '#10B981',
+            cyanpulse: '#06B6D4',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #090E1A;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .surface-card {
+      background: linear-gradient(180deg, rgba(16, 24, 43, 0.95) 0%, rgba(12, 19, 35, 0.98) 100%);
+      border: 1px solid #1E293B;
+      box-shadow: 0 14px 35px -15px rgba(0, 0, 0, 0.65);
+    }
+    .surface-interactive {
+      background: linear-gradient(180deg, rgba(16, 24, 43, 0.95) 0%, rgba(12, 19, 35, 0.98) 100%);
+      border: 1px solid #1E293B;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .surface-interactive:hover {
+      border-color: rgba(6, 182, 212, 0.45);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px -12px rgba(6, 182, 212, 0.14);
+    }
+    .glass-header {
+      background: rgba(9, 14, 26, 0.86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #1E293B;
+    }
+    .hero-gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 15%, #22D3EE 60%, #34D399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow-ring-cyan {
+      box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.25);
+    }
+    .glow-ring-emerald {
+      box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.25);
+    }
+    input[type='range'] {
+      -webkit-appearance: none;
+      background: transparent;
+    }
+    input[type='range']::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #10B981;
+      border: 2px solid #090E1A;
+      cursor: pointer;
+      margin-top: -7px;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.65);
+    }
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: 999px;
+      background: #1E293B;
+      cursor: pointer;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090E1A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-cyanpulse selection:text-voidbg">
+
+  <!-- 1. TOP NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 glass-header px-4 sm:px-6 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+      <a href="#top" class="flex items-center gap-3 group shrink-0">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyanpulse to-emeraldbolt p-[1.5px] shadow-md">
+          <div class="w-full h-full bg-voidbg rounded-[10.5px] flex items-center justify-center">
+            <i data-lucide="activity" class="w-5 h-5 text-cyanpulse group-hover:scale-110 transition-transform"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold tracking-tight text-white text-sm sm:text-base">
+              AURA<span class="text-cyanpulse">FIT</span> <span class="text-emeraldbolt">AI</span>
+            </span>
+            <span class="hidden md:inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-emeraldbolt/10 text-emeraldbolt border border-emeraldbolt/30">
+              Pre-Seed
+            </span>
+          </div>
+          <span class="text-[11px] text-slate-400 block">Melbourne, VIC • Investor Data Room</span>
+        </div>
+      </a>
+
+      <!-- Quick Links -->
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-300">
+        <a href="#thesis" class="hover:text-cyanpulse transition-colors">Thesis</a>
+        <a href="#product" class="hover:text-cyanpulse transition-colors">Product & Stack</a>
+        <a href="#economics" class="hover:text-cyanpulse transition-colors">Economics & Funds</a>
+        <a href="#financials" class="hover:text-cyanpulse transition-colors">24-Mo Model</a>
+        <a href="#safe" class="hover:text-cyanpulse transition-colors">AU SAFE</a>
+      </nav>
+
+      <!-- Primary CTA -->
+      <button
+        type="button"
+        onclick="openWalkthroughModal()"
+        class="px-3.5 sm:px-4 py-2.5 rounded-xl bg-gradient-to-r from-emeraldbolt to-cyanpulse hover:opacity-95 text-voidbg font-extrabold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-emeraldbolt/20 transition-all cursor-pointer shrink-0"
+      >
+        <i data-lucide="calendar-clock" class="w-4 h-4"></i>
+        <span>Book 20-Min Walkthrough</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-24">
+
+    <!-- 2. HERO & KPI STRIP -->
+    <section class="relative pt-2">
+      <div class="absolute -top-12 left-1/4 w-96 h-96 bg-cyanpulse/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+      <div class="absolute top-16 right-1/5 w-80 h-80 bg-emeraldbolt/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+      <div class="flex flex-wrap items-center gap-2.5 mb-5">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg font-mono text-xs bg-panelbg text-slate-200 border border-lineborder">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyanpulse"></i> Melbourne, Australia
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg font-mono text-xs bg-emeraldbolt/10 text-emeraldbolt border border-emeraldbolt/30">
+          <i data-lucide="coins" class="w-3.5 h-3.5"></i> $120,000 AUD Pre-Seed / Initial Buy-In
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg font-mono text-xs bg-cyanpulse/10 text-cyanpulse border border-cyanpulse/30">
+          <i data-lucide="server" class="w-3.5 h-3.5"></i> AWS Sydney (ap-southeast-2)
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyanpulse to-emeraldbolt p-[1.5px] shadow-md">
+          <div class="w-full h-full bg-voidbg rounded-[10.5px] flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="activity" aria-hidden="true" class="lucide lucide-activity w-5 h-5 text-cyanpulse group-hover:scale-110 transition-transform"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg>
+          </div>
+        <div class="lg:col-span-8 space-y-5">
+          <h1 class="text-3xl sm:text-5xl lg:text-[52px] font-black tracking-tight leading-[1.1] text-white">
+            AI Virtual Fitness Ecosystem: <span class="hero-gradient-text">Adaptive Coaching Scaled by Live Biometrics</span>
+          </h1>
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
+            Human personal trainers cap out at 25–40 clients, while static fitness apps lose ~37% of users within six months. Built in Melbourne, our AI Virtual Fitness Ecosystem pairs real-time wearable telemetry (Apple Health, Garmin, Whoop) with a B2B2C coach triage portal so trainers supervise 200+ clients with high-margin software economics.
+          </p>
+
+          <!-- Quick Triggers for Walkthrough & Australian SAFE Terms -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <button
+              type="button"
+              onclick="openWalkthroughModal(['Interactive Prototype', 'Architecture Blueprint', '24-Month Financial Model'])"
+              class="px-5 py-3.5 rounded-xl bg-emeraldbolt hover:bg-emerald-400 text-voidbg font-extrabold text-sm flex items-center gap-2 shadow-lg shadow-emeraldbolt/20 transition-all cursor-pointer"
+            >
+              <i data-lucide="video" class="w-4 h-4"></i>
+              <span>Schedule 20-Min Walkthrough</span>
+            </button>
+            <a
+              href="#safe"
+              class="px-5 py-3.5 rounded-xl bg-panelbg hover:bg-panelhover border border-cyanpulse/40 text-cyanpulse font-bold text-sm flex items-center gap-2 transition-all"
+            >
+              <i data-lucide="file-badge-2" class="w-4 h-4"></i>
+              <span>Inspect Australian SAFE Terms ($1.5M Cap)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Quick Thesis Summary Box -->
+        <div class="lg:col-span-4">
+          <div class="surface-card p-6 rounded-2xl border-t-2 border-t-emeraldbolt space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs uppercase tracking-wider text-emeraldbolt font-bold">Round & Wedge Summary</span>
+              <span class="px-2 py-0.5 rounded font-mono text-[10px] bg-cyanpulse/15 text-cyanpulse">s708 Eligible</span>
+            </div>
+            <div class="space-y-2.5 text-xs sm:text-sm">
+              <div class="flex justify-between py-2 border-b border-lineborder/70">
+                <span class="text-slate-400">Initial Buy-In Raise</span>
+                <span class="font-mono font-bold text-white">$120,000 AUD</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-lineborder/70">
+                <span class="text-slate-400">Melbourne GTM Wedge</span>
+                <span class="font-mono font-semibold text-cyanpulse">25 Founding Coaches</span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-lineborder/70">
+                <span class="text-slate-400">6-Month Target</span>
+                <span class="font-mono font-semibold text-emeraldbolt">1,500+ Paying Users</span>
+              </div>
+              <div class="flex justify-between py-2">
+                <span class="text-slate-400">Equity Instrument</span>
+                <span class="font-mono font-bold text-white">AU SAFE ($1.5M Cap)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KPI Strip -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+        <div class="surface-card p-5 rounded-2xl border-l-4 border-l-emeraldbolt">
+          <span class="font-mono text-xs uppercase tracking-wider text-slate-400 block">Pre-Seed Raise</span>
+          <span class="font-mono text-2xl sm:text-3xl font-extrabold text-white mt-1 block">$120,000 <span class="text-xs font-normal text-slate-400">AUD</span></span>
+          <span class="text-xs text-emeraldbolt mt-1.5 flex items-center gap-1">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> 14-Wk MVP + 6-Mo GTM
+          </span>
+        </div>
+
+        <div class="surface-card p-5 rounded-2xl border-l-4 border-l-cyanpulse">
+          <span class="font-mono text-xs uppercase tracking-wider text-slate-400 block">LTV : CAC Ratio</span>
+          <span class="font-mono text-2xl sm:text-3xl font-extrabold text-cyanpulse mt-1 block">6.8x</span>
+          <span class="text-xs text-slate-300 mt-1.5 font-mono">
+            $285 AUD LTV / $42 AUD CAC
+          </span>
+        </div>
+
+        <div class="surface-card p-5 rounded-2xl border-l-4 border-l-emeraldbolt">
+          <span class="font-mono text-xs uppercase tracking-wider text-slate-400 block">Software Gross Margin</span>
+          <span class="font-mono text-2xl sm:text-3xl font-extrabold text-white mt-1 block">~82%</span>
+          <span class="text-xs text-emeraldbolt mt-1.5 flex items-center gap-1">
+            <i data-lucide="trending-up" class="w-3.5 h-3.5"></i> SaaS + Adaptive AI Moat
+          </span>
+        </div>
+
+        <div class="surface-card p-5 rounded-2xl border-l-4 border-l-cyanpulse">
+          <span class="font-mono text-xs uppercase tracking-wider text-slate-400 block">Break-Even Profile</span>
+          <span class="font-mono text-2xl sm:text-3xl font-extrabold text-white mt-1 block">Month 15–18</span>
+          <span class="text-xs text-cyanpulse mt-1.5 flex items-center gap-1">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Base Case: Month 15
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. MARKET THESIS & ARCHITECTURE SECTION -->
+    <section id="thesis" class="space-y-8 pt-6 border-t border-lineborder">
+      <div class="max-w-3xl space-y-2">
+        <span class="font-mono text-xs uppercase tracking-widest text-cyanpulse font-bold">Market Thesis & Regional Advantage</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Why AI-Driven Virtual Coaching Wins Now
+        </h2>
+        <p class="text-sm sm:text-base text-slate-400">
+          Rapid expansion in AI personal training and virtual fitness meets strict Australian health-data expectations and cross-platform engineering efficiency.
+        </p>
+      </div>
+
+      <!-- Market Growth & Retention Metrics Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="surface-interactive p-6 rounded-2xl space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs uppercase text-cyanpulse font-bold">AI Personal Trainer Market</span>
+            <span class="px-2.5 py-0.5 rounded font-mono text-xs bg-cyanpulse/15 text-cyanpulse font-bold">18.6% CAGR</span>
+          </div>
+          <div class="font-mono text-3xl font-black text-white">$19.9B &rarr; $65.7B</div>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Projected expansion from <strong class="text-slate-200">$19.9B in 2026</strong> to <strong class="text-slate-200">$65.7B by 2033</strong> as consumers shift from static workout libraries to real-time adaptive coaching.
+          </p>
+        </div>
+
+        <div class="surface-interactive p-6 rounded-2xl space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs uppercase text-emeraldbolt font-bold">Virtual Fitness Sector</span>
+            <span class="px-2.5 py-0.5 rounded font-mono text-xs bg-emeraldbolt/15 text-emeraldbolt font-bold">23.02% Growth</span>
+          </div>
+          <div class="font-mono text-3xl font-black text-white">23.02% <span class="text-sm font-normal text-slate-400">annual growth</span></div>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Connected training and wearable-integrated fitness continue to expand across ANZ and APAC, driven by hybrid studio models and remote coaching demand.
+          </p>
+        </div>
+
+        <div class="surface-interactive p-6 rounded-2xl space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs uppercase text-amber-400 font-bold">Habit & Retention Loop</span>
+            <span class="px-2.5 py-0.5 rounded font-mono text-xs bg-emeraldbolt/15 text-emeraldbolt font-bold">3+ Sessions / Wk</span>
+          </div>
+          <div class="font-mono text-3xl font-black text-emeraldbolt">85–90% <span class="text-sm font-normal text-slate-300">retention</span></div>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Users completing 3+ guided sessions weekly reach <strong class="text-white">85–90% retention</strong>, overcoming the ~37% six-month drop-off typical of non-adaptive apps.
+          </p>
+        </div>
+      </div>
+
+      <!-- Engineering & Sovereign Australian Compliance Pillars -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="surface-card p-6 rounded-2xl flex items-start gap-4">
+          <div class="w-11 h-11 rounded-xl bg-cyanpulse/15 border border-cyanpulse/30 flex items-center justify-center text-cyanpulse shrink-0">
+            <i data-lucide="smartphone" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1.5">
+            <div class="flex flex-wrap items-center gap-2">
+              <h3 class="text-base font-bold text-white">React Native Cross-Platform Efficiency</h3>
+              <span class="px-2 py-0.5 rounded font-mono text-[11px] bg-emeraldbolt/15 text-emeraldbolt font-bold">25–35% Cost Savings</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              A single shared TypeScript/React Native codebase powers both iOS and Android—trimming <strong class="text-slate-200">25–35%</strong> off parallel native build costs while supporting native wearable/sensor bridges.
+            </p>
+          </div>
+        </div>
+
+        <div class="surface-card p-6 rounded-2xl flex items-start gap-4">
+          <div class="w-11 h-11 rounded-xl bg-emeraldbolt/15 border border-emeraldbolt/30 flex items-center justify-center text-emeraldbolt shrink-0">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1.5">
+            <div class="flex flex-wrap items-center gap-2">
+              <h3 class="text-base font-bold text-white">AWS Sydney (<code class="text-cyanpulse">ap-southeast-2</code>) & APPs</h3>
+              <span class="px-2 py-0.5 rounded font-mono text-[11px] bg-cyanpulse/15 text-cyanpulse font-bold">Privacy Act 1988</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Local data residency in <strong class="text-slate-200">AWS Sydney (ap-southeast-2)</strong> paired with <strong class="text-slate-200">Australian Privacy Act & Australian Privacy Principles (APPs)</strong> governance protects sensitive biometric and health telemetry.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. INTERACTIVE PRODUCT PROTOTYPE & STACK EXPLORER -->
+    <section id="product" class="space-y-8 pt-6 border-t border-lineborder">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-5">
+        <div class="space-y-2">
+          <span class="font-mono text-xs uppercase tracking-widest text-emeraldbolt font-bold">Interactive Product & Blueprint</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">Product Prototype & Stack Explorer</h2>
+          <p class="text-sm text-slate-400 max-w-2xl">
+            Explore the live B2C Athlete recovery simulator and B2B Coach triage portal, or inspect the 4-layer sovereign architecture and Australian privacy blueprint.
+          </p>
+        </div>
+
+        <!-- Two Main Explorer Tabs -->
+        <div class="inline-flex p-1.5 rounded-xl bg-panelbg border border-lineborder self-start lg:self-auto">
+          <button
+            type="button"
+            id="explorer-tab-sim"
+            onclick="switchExplorerTab('sim')"
+            class="explorer-tab px-4 py-2 rounded-lg text-xs font-bold transition-all bg-cyanpulse text-voidbg shadow-md flex items-center gap-2 cursor-pointer"
+          >
+            <i data-lucide="activity" class="w-4 h-4"></i>
+            <span>Tab 1: B2C App & B2B Coach Simulator</span>
+          </button>
+          <button
+            type="button"
+            id="explorer-tab-stack"
+            onclick="switchExplorerTab('stack')"
+            class="explorer-tab px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-300 hover:text-white flex items-center gap-2 cursor-pointer"
+          >
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>Tab 2: 4-Layer Architecture & Compliance</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB 1 CONTENT: B2C ATHLETE APP + B2B COACH PORTAL -->
+      <div id="explorer-panel-sim" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- B2C Athlete App Simulator (7 Cols) -->
+        <div class="lg:col-span-7 surface-card p-6 rounded-3xl border border-cyanpulse/30 glow-ring-cyan space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-lineborder pb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-cyanpulse/15 border border-cyanpulse/30 flex items-center justify-center font-mono font-bold text-xs text-cyanpulse">
+                MR
+              </div>
+              <div>
+                <span class="font-mono text-[11px] text-slate-400 block">B2C Athlete App • Apple Health & Whoop Sync</span>
+                <h3 class="text-base font-bold text-white">Maya Reid — South Yarra, Melbourne</h3>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full font-mono text-[11px] bg-emeraldbolt/15 text-emeraldbolt border border-emeraldbolt/30 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emeraldbolt animate-pulse"></span> Telemetry Connected
+            </span>
+          </div>
+
+          <!-- Live Telemetry & Readiness Metrics -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+            <div class="p-4 rounded-2xl bg-voidbg border border-lineborder">
+              <span class="font-mono text-[11px] text-slate-400 block">Recovery Readiness</span>
+              <div class="flex items-baseline justify-between mt-1">
+                <span id="sim-readiness" class="font-mono text-2xl sm:text-3xl font-black text-emeraldbolt">88%</span>
+                <span id="sim-readiness-tag" class="font-mono text-[11px] text-emeraldbolt font-semibold">Optimal</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-voidbg border border-lineborder">
+              <span class="font-mono text-[11px] text-slate-400 block">HRV & Resting HR</span>
+              <div class="flex items-baseline justify-between mt-1">
+                <span id="sim-hrv" class="font-mono text-xl sm:text-2xl font-extrabold text-cyanpulse">74ms</span>
+                <span id="sim-rhr" class="font-mono text-xs text-slate-300">51 bpm RHR</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-voidbg border border-lineborder">
+              <span class="font-mono text-[11px] text-slate-400 block">Sleep & Strain</span>
+              <div class="flex items-baseline justify-between mt-1">
+                <span id="sim-sleep" class="font-mono text-xl sm:text-2xl font-extrabold text-white">7h 52m</span>
+                <span id="sim-strain" class="font-mono text-xs text-emeraldbolt">Load Ready</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Adaptive AI Workout Output Card -->
+          <div id="sim-workout-box" class="p-5 rounded-2xl bg-voidbg/90 border border-emeraldbolt/40 space-y-3 transition-all">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-mono text-xs uppercase tracking-wider text-emeraldbolt font-bold flex items-center gap-1.5">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> AI Periodization Engine
+              </span>
+              <span id="sim-load-badge" class="px-2.5 py-0.5 rounded font-mono text-[11px] font-bold bg-emeraldbolt/20 text-emeraldbolt">
+                100% TARGET LOAD • 4 SETS
+              </span>
+            </div>
+            <h4 id="sim-session-title" class="text-lg font-extrabold text-white">
+              Strength Block: Trap Bar Deadlift & Tempo Push
+            </h4>
+            <p id="sim-session-desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Readiness at 88% with strong HRV recovery. Full volume prescribed: 4 working sets @ 80% 1RM, 3x10 Incline Dumbbell Press, 120s rest intervals.
+            </p>
+            <div id="sim-volume-bar-wrap" class="pt-2 border-t border-lineborder flex flex-wrap items-center justify-between gap-2 font-mono text-xs text-slate-400">
+              <span>Prescribed Volume: <strong id="sim-volume-text" class="text-white">12,400 kg</strong></span>
+              <span>Session Duration: <strong id="sim-duration-text" class="text-cyanpulse">55 mins</strong></span>
+            </div>
+          </div>
+
+          <!-- Recovery Simulation Action Button -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+            <span class="text-xs text-slate-400">Test real-time biometric adaptation:</span>
+            <div class="flex items-center gap-2.5">
+              <button
+                type="button"
+                id="btn-simulate-low"
+                onclick="toggleRecoverySimulation(true)"
+                class="px-4 py-2.5 rounded-xl bg-rose-500/15 hover:bg-rose-500/25 text-rose-300 border border-rose-500/40 font-bold text-xs flex items-center gap-2 transition-all cursor-pointer"
+              >
+                <i data-lucide="battery-low" class="w-4 h-4 text-rose-400"></i>
+                <span>Simulate Low Recovery (48%)</span>
+              </button>
+              <button
+                type="button"
+                id="btn-simulate-reset"
+                onclick="toggleRecoverySimulation(false)"
+                class="hidden px-4 py-2.5 rounded-xl bg-emeraldbolt/15 hover:bg-emeraldbolt/25 text-emeraldbolt border border-emeraldbolt/40 font-bold text-xs flex items-center gap-2 transition-all cursor-pointer"
+              >
+                <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                <span>Restore Optimal Readiness (88%)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- B2B Coach Portal Triage View for 184 Clients (5 Cols) -->
+        <div class="lg:col-span-5 surface-card p-6 rounded-3xl border border-emeraldbolt/30 glow-ring-emerald space-y-5">
+          <div class="flex items-center justify-between border-b border-lineborder pb-4">
+            <div>
+              <span class="font-mono text-[11px] uppercase tracking-wider text-emeraldbolt font-bold">B2B Coach Portal</span>
+              <h3 class="text-base font-bold text-white">184 Active Clients Triage</h3>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-voidbg border border-lineborder font-mono text-xs text-cyanpulse">
+              AI Auto-Managed: 173
+            </span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2.5 text-center font-mono">
+            <div class="p-3 rounded-xl bg-voidbg border border-lineborder">
+              <span class="text-[10px] text-slate-400 block">ROSTER</span>
+              <span class="text-lg font-extrabold text-white">184</span>
+            </div>
+            <div class="p-3 rounded-xl bg-voidbg border border-amber-400/30">
+              <span class="text-[10px] text-amber-400 block">FLAGS</span>
+              <span id="coach-flag-count" class="text-lg font-extrabold text-amber-400">3</span>
+            </div>
+            <div class="p-3 rounded-xl bg-voidbg border border-emeraldbolt/30">
+              <span class="text-[10px] text-emeraldbolt block">ADHERENCE</span>
+              <span class="text-lg font-extrabold text-emeraldbolt">89%</span>
+            </div>
+          </div>
+
+          <div class="space-y-2.5">
+            <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400 block">Exception Queue (Requires Coach Touch)</span>
+
+            <div class="p-3.5 rounded-xl bg-voidbg border border-rose-500/30 flex items-center justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-white">Liam O'Connor</span>
+                  <span class="px-1.5 py-0.5 rounded font-mono text-[10px] bg-rose-500/20 text-rose-300">Readiness 48%</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-0.5">AI swapped heavy intervals to 30m recovery ride + mobility.</p>
+              </div>
+              <button type="button" onclick="resolveTriageItem(this)" class="px-3 py-1.5 rounded-lg bg-panelbg hover:bg-emeraldbolt hover:text-voidbg border border-lineborder text-xs font-bold text-white shrink-0 transition-colors cursor-pointer">
+                Approve
+              </button>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-voidbg border border-amber-400/30 flex items-center justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-white">Hannah Nguyen</span>
+                  <span class="px-1.5 py-0.5 rounded font-mono text-[10px] bg-amber-400/20 text-amber-300">Form Video</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-0.5">Submitted kettlebell swing clip; AI flagged hip hinge timing.</p>
+              </div>
+              <button type="button" onclick="resolveTriageItem(this)" class="px-3 py-1.5 rounded-lg bg-panelbg hover:bg-emeraldbolt hover:text-voidbg border border-lineborder text-xs font-bold text-white shrink-0 transition-colors cursor-pointer">
+                Review
+              </button>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-voidbg border border-cyanpulse/30 flex items-center justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-white">Callum Fraser</span>
+                  <span class="px-1.5 py-0.5 rounded font-mono text-[10px] bg-cyanpulse/20 text-cyanpulse">Load PR +6%</span>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-0.5">Hit 4 weekly sessions; AI proposes progressive load bump.</p>
+              </div>
+              <button type="button" onclick="resolveTriageItem(this)" class="px-3 py-1.5 rounded-lg bg-panelbg hover:bg-emeraldbolt hover:text-voidbg border border-lineborder text-xs font-bold text-white shrink-0 transition-colors cursor-pointer">
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2 CONTENT: 4-LAYER ARCHITECTURE & COMPLIANCE BLUEPRINT -->
+      <div id="explorer-panel-stack" class="hidden grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="surface-interactive p-6 rounded-2xl space-y-3 border-t-2 border-t-cyanpulse">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-cyanpulse">LAYER 01 • MOBILE CLIENT</span>
+            <span class="px-2 py-0.5 rounded font-mono text-[11px] bg-emeraldbolt/15 text-emeraldbolt">25–35% Cost Savings</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-white">React Native Client (iOS & Android)</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Unified React Native application delivering shared business logic, offline-resilient workout logging, and native modules for wearable/sensor access without paying for two parallel native codebases.
+          </p>
+        </div>
+
+        <div class="surface-interactive p-6 rounded-2xl space-y-3 border-t-2 border-t-emeraldbolt">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-emeraldbolt">LAYER 02 • INTELLIGENCE ENGINE</span>
+            <span class="px-2 py-0.5 rounded font-mono text-[11px] bg-cyanpulse/15 text-cyanpulse">Adaptive Periodization</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-white">AI Periodization & Biometric Engine</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Ingests HRV, resting heart rate, sleep quality, and training load from Apple HealthKit, Health Connect, Garmin, and Whoop to dynamically scale sets, loads, and recovery windows.
+          </p>
+        </div>
+
+        <div class="surface-interactive p-6 rounded-2xl space-y-3 border-t-2 border-t-cyanpulse">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-cyanpulse">LAYER 03 • SOVEREIGN CLOUD</span>
+            <span class="px-2 py-0.5 rounded font-mono text-[11px] bg-cyanpulse/15 text-cyanpulse">ap-southeast-2</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-white">AWS Sydney Sovereign Cloud</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Core APIs, relational/time-series telemetry stores, and coach orchestration services hosted in <strong class="text-white">AWS Sydney (ap-southeast-2)</strong> for low-latency Australian access and local data residency.
+          </p>
+        </div>
+
+        <div class="surface-interactive p-6 rounded-2xl space-y-3 border-t-2 border-t-emeraldbolt">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-emeraldbolt">LAYER 04 • GOVERNANCE & SECURITY</span>
+            <span class="px-2 py-0.5 rounded font-mono text-[11px] bg-emeraldbolt/15 text-emeraldbolt">APPs Compliant</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-white">Privacy Act / APP & Health Data Security</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Engineered around the <strong class="text-white">Australian Privacy Act 1988</strong> and <strong class="text-white">Australian Privacy Principles (APPs)</strong> with encrypted health telemetry, granular user consent controls, and role-scoped coach access.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. BUSINESS MODEL & USE OF FUNDS SECTION -->
+    <section id="economics" class="space-y-8 pt-6 border-t border-lineborder">
+      <div class="max-w-3xl space-y-2">
+        <span class="font-mono text-xs uppercase tracking-widest text-cyanpulse font-bold">Monetization & Capital Allocation</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">Business Model & $120,000 AUD Use of Funds</h2>
+        <p class="text-sm sm:text-base text-slate-400">
+          Dual B2C subscription and B2B coach/studio SaaS tiers paired with disciplined capital allocation across engineering, Melbourne coach acquisition, cloud/LLM operations, and compliance.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Monetization Tiers (6 Cols) -->
+        <div class="lg:col-span-6 space-y-4">
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i data-lucide="credit-card" class="w-5 h-5 text-emeraldbolt"></i> Revenue Architecture (AUD)
+          </h3>
+
+          <div class="surface-interactive p-5 rounded-2xl space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-white">B2C Core AI Tier</span>
+              <span class="font-mono text-sm font-extrabold text-cyanpulse">$19.99/mo <span class="text-xs text-slate-400 font-normal">or $149.99/yr</span></span>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Adaptive AI workout programming, wearable sync, recovery readiness adjustments, and macro guidance for solo athletes.
+            </p>
+          </div>
+
+          <div class="surface-interactive p-5 rounded-2xl space-y-2 border border-emeraldbolt/30">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-white">B2C Hybrid Pro Tier</span>
+              <span class="font-mono text-sm font-extrabold text-emeraldbolt">$49.99/mo</span>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Daily adaptive AI coaching combined with asynchronous human coach check-ins and movement/form review.
+            </p>
+          </div>
+
+          <div class="surface-interactive p-5 rounded-2xl space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-white">B2B Coach & Studio SaaS</span>
+              <span class="font-mono text-sm font-extrabold text-white">$99 – $249/mo</span>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Client roster management, AI exception triage, and branded coaching workflows for independent trainers, studios, and wellness teams.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-panelbg border border-lineborder flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
+            <span class="text-slate-400">Unit Economics: <strong class="text-white">6.8x LTV:CAC</strong></span>
+            <span class="text-emeraldbolt">$285 AUD LTV vs $42 AUD CAC</span>
+          </div>
+        </div>
+
+        <!-- Use of Funds Chart & Line Items (6 Cols) -->
+        <div class="lg:col-span-6 surface-card p-6 rounded-3xl space-y-5">
+          <div class="flex items-center justify-between border-b border-lineborder pb-3">
+            <div>
+              <h3 class="text-base font-bold text-white">Use of Funds ($120,000 AUD)</h3>
+              <p class="text-xs text-slate-400">Pre-Seed / Initial Buy-In Capital Breakdown</p>
+            </div>
+            <span class="font-mono text-sm font-extrabold text-emeraldbolt">$120,000 AUD</span>
+          </div>
+
+          <div class="h-56 w-full relative">
+            <canvas id="useOfFundsChart"></canvas>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 font-mono text-xs">
+            <div class="p-3 rounded-xl bg-voidbg border border-lineborder flex items-center justify-between">
+              <span class="flex items-center gap-2 text-slate-200"><span class="w-2.5 h-2.5 rounded-full bg-emeraldbolt"></span>Product Eng & AI Core</span>
+              <span class="font-bold text-white">$60k</span>
+            </div>
+            <div class="p-3 rounded-xl bg-voidbg border border-lineborder flex items-center justify-between">
+              <span class="flex items-center gap-2 text-slate-200"><span class="w-2.5 h-2.5 rounded-full bg-cyanpulse"></span>GTM & Coach Acq.</span>
+              <span class="font-bold text-white">$30k</span>
+            </div>
+            <div class="p-3 rounded-xl bg-voidbg border border-lineborder flex items-center justify-between">
+              <span class="flex items-center gap-2 text-slate-200"><span class="w-2.5 h-2.5 rounded-full bg-indigo-400"></span>Cloud & LLM Ops</span>
+              <span class="font-bold text-white">$15k</span>
+            </div>
+            <div class="p-3 rounded-xl bg-voidbg border border-lineborder flex items-center justify-between">
+              <span class="flex items-center gap-2 text-slate-200"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>Legal, IP & Privacy</span>
+              <span class="font-bold text-white">$15k</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. INTERACTIVE 24-MONTH FINANCIAL PROJECTION MODEL -->
+    <section id="financials" class="space-y-8 pt-6 border-t border-lineborder">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-5">
+        <div class="space-y-2">
+          <span class="font-mono text-xs uppercase tracking-widest text-emeraldbolt font-bold">24-Month Operating Model (AUD)</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">MRR, Burn Rate & Break-Even Trajectory</h2>
+          <p class="text-sm text-slate-400 max-w-2xl">
+            Switch between Conservative, Base Case, and Upside scenarios to inspect Monthly Recurring Revenue (MRR), Monthly Burn, Net Cash Flow, and key milestones from Month 1 to Month 24.
+          </p>
+        </div>
+
+        <!-- Scenario Switcher Tabs -->
+        <div class="inline-flex p-1.5 rounded-xl bg-panelbg border border-lineborder self-start lg:self-auto">
+          <button
+            type="button"
+            id="tab-scen-conservative"
+            onclick="selectFinancialScenario('conservative')"
+            class="fin-scen-btn px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-300 hover:text-white cursor-pointer"
+          >
+            Conservative
+          </button>
+          <button
+            type="button"
+            id="tab-scen-base"
+            onclick="selectFinancialScenario('base')"
+            class="fin-scen-btn px-4 py-2 rounded-lg text-xs font-bold transition-all bg-emeraldbolt text-voidbg shadow-md cursor-pointer"
+          >
+            Base Case
+          </button>
+          <button
+            type="button"
+            id="tab-scen-upside"
+            onclick="selectFinancialScenario('upside')"
+            class="fin-scen-btn px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-300 hover:text-white cursor-pointer"
+          >
+            Upside
+          </button>
+        </div>
+      </div>
+
+      <!-- Scenario Highlights -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="surface-card p-4 rounded-2xl">
+          <span class="font-mono text-[11px] uppercase text-slate-400 block">Month 24 MRR</span>
+          <span id="fin-m24-mrr" class="font-mono text-xl sm:text-2xl font-black text-emeraldbolt mt-1 block">$168,500</span>
+        </div>
+        <div class="surface-card p-4 rounded-2xl">
+          <span class="font-mono text-[11px] uppercase text-slate-400 block">Month 24 Burn</span>
+          <span id="fin-m24-burn" class="font-mono text-xl sm:text-2xl font-black text-rose-400 mt-1 block">$129,500</span>
+        </div>
+        <div class="surface-card p-4 rounded-2xl">
+          <span class="font-mono text-[11px] uppercase text-slate-400 block">Break-Even Month</span>
+          <span id="fin-breakeven" class="font-mono text-xl sm:text-2xl font-black text-cyanpulse mt-1 block">Month 15</span>
+        </div>
+        <div class="surface-card p-4 rounded-2xl">
+          <span class="font-mono text-[11px] uppercase text-slate-400 block">Month 24 Cash Balance</span>
+          <span id="fin-m24-cash" class="font-mono text-xl sm:text-2xl font-black text-white mt-1 block">$248,400</span>
+        </div>
+      </div>
+
+      <!-- Multi-Series Chart.js Canvas -->
+      <div class="surface-card p-5 sm:p-7 rounded-3xl space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h3 class="text-base font-bold text-white">24-Month MRR, Monthly Burn & Net Cash Flow (AUD)</h3>
+            <p class="text-xs text-slate-400">Starting cash balance: $120,000 AUD Pre-Seed capital</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-4 font-mono text-xs">
+            <span class="flex items-center gap-1.5 text-slate-200"><span class="w-3 h-3 rounded-sm bg-emeraldbolt inline-block"></span> MRR</span>
+            <span class="flex items-center gap-1.5 text-slate-200"><span class="w-3 h-3 rounded-sm bg-rose-500 inline-block"></span> Monthly Burn</span>
+            <span class="flex items-center gap-1.5 text-slate-200"><span class="w-3 h-3 rounded-full bg-cyanpulse inline-block"></span> Net Cash Flow</span>
+          </div>
+        </div>
+        <div class="h-80 sm:h-96 w-full relative">
+          <canvas id="projectionChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Key Milestone Table (Months 1, 3, 6, 12, 15, 18, 24) -->
+      <div class="surface-card rounded-2xl overflow-hidden">
+        <div class="p-4 sm:p-5 border-b border-lineborder flex flex-wrap items-center justify-between gap-2">
+          <h3 class="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-white">
+            Key Milestone Ledger (Months 1, 3, 6, 12, 15, 18 & 24)
+          </h3>
+          <span id="fin-scenario-pill" class="font-mono text-xs px-2.5 py-0.5 rounded bg-emeraldbolt/15 text-emeraldbolt border border-emeraldbolt/30">
+            Scenario: Base Case
+          </span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-voidbg border-b border-lineborder font-mono text-[11px] uppercase tracking-wider text-slate-400">
+                <th class="py-3.5 px-4">Milestone</th>
+                <th class="py-3.5 px-4">Stage Focus</th>
+                <th class="py-3.5 px-4 text-right">B2C Subs</th>
+                <th class="py-3.5 px-4 text-right">B2B Coaches</th>
+                <th class="py-3.5 px-4 text-right">MRR (AUD)</th>
+                <th class="py-3.5 px-4 text-right">Burn (AUD)</th>
+                <th class="py-3.5 px-4 text-right">Net Cash Flow</th>
+                <th class="py-3.5 px-4 text-right">Cash Balance</th>
+              </tr>
+            </thead>
+            <tbody id="milestone-table-rows" class="divide-y divide-lineborder font-mono text-xs sm:text-sm">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. AUSTRALIAN SAFE (SIMPLE AGREEMENT FOR FUTURE EQUITY) CALCULATOR -->
+    <section id="safe" class="space-y-8 pt-6 border-t border-lineborder">
+      <div class="max-w-3xl space-y-2">
+        <span class="font-mono text-xs uppercase tracking-widest text-cyanpulse font-bold">Australian SAFE Modeling</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Australian SAFE Ownership & Milestone Calculator
+        </h2>
+        <p class="text-sm sm:text-base text-slate-400">
+          Model your Pre-Seed investment ($10,000 to $120,000 AUD) under an Australian SAFE defaulting to a <strong class="text-white">$1.5M AUD Early-Bird Valuation Cap</strong> and <strong class="text-white">20% discount</strong>.
+        </p>
+      </div>
+
+      <div class="surface-card p-6 sm:p-8 rounded-3xl border border-cyanpulse/30 space-y-7">
+        <!-- Controls Row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Investment Amount Slider & Input -->
+          <div class="p-4 rounded-2xl bg-voidbg border border-lineborder space-y-3">
+            <div class="flex items-center justify-between">
+              <label for="safe-amount-input" class="font-mono text-xs uppercase text-slate-300 font-bold">Investment (AUD)</label>
+              <span class="font-mono text-xs text-emeraldbolt">$10k–$120k</span>
+            </div>
+            <div class="flex items-center gap-1.5 bg-panelbg px-3 py-2 rounded-xl border border-lineborder">
+              <span class="font-mono text-sm text-slate-400">$</span>
+              <input
+                type="number"
+                id="safe-amount-input"
+                min="10000"
+                max="120000"
+                step="5000"
+                value="30000"
+                oninput="recalculateSafe()"
+                class="w-full bg-transparent font-mono text-lg font-extrabold text-white focus:outline-none"
+              />
+            </div>
+            <input
+              type="range"
+              id="safe-amount-slider"
+              min="10000"
+              max="120000"
+              step="5000"
+              value="30000"
+              oninput="syncSafeSlider(this.value)"
+              class="w-full"
+            />
+          </div>
+
+          <!-- Valuation Cap Input -->
+          <div class="p-4 rounded-2xl bg-voidbg border border-lineborder space-y-3">
+            <div class="flex items-center justify-between">
+              <label for="safe-cap-input" class="font-mono text-xs uppercase text-slate-300 font-bold">Valuation Cap (AUD)</label>
+              <button type="button" onclick="setDefaultSafeTerms()" class="font-mono text-[11px] text-cyanpulse hover:underline cursor-pointer">
+                Reset $1.5M
+              </button>
+            </div>
+            <div class="flex items-center gap-1.5 bg-panelbg px-3 py-2 rounded-xl border border-lineborder">
+              <span class="font-mono text-sm text-slate-400">$</span>
+              <input
+                type="number"
+                id="safe-cap-input"
+                min="500000"
+                max="10000000"
+                step="100000"
+                value="1500000"
+                oninput="recalculateSafe()"
+                class="w-full bg-transparent font-mono text-lg font-extrabold text-cyanpulse focus:outline-none"
+              />
+            </div>
+            <span class="text-[11px] text-slate-400 block">Default: $1,500,000 AUD Early-Bird Cap</span>
+          </div>
+
+          <!-- Discount Rate Input -->
+          <div class="p-4 rounded-2xl bg-voidbg border border-lineborder space-y-3">
+            <div class="flex items-center justify-between">
+              <label for="safe-discount-input" class="font-mono text-xs uppercase text-slate-300 font-bold">Discount Rate (%)</label>
+              <span class="font-mono text-xs text-emeraldbolt">Standard 20%</span>
+            </div>
+            <div class="flex items-center justify-between bg-panelbg px-3 py-2 rounded-xl border border-lineborder">
+              <input
+                type="number"
+                id="safe-discount-input"
+                min="0"
+                max="50"
+                step="5"
+                value="20"
+                oninput="recalculateSafe()"
+                class="w-full bg-transparent font-mono text-lg font-extrabold text-emeraldbolt focus:outline-none"
+              />
+              <span class="font-mono text-sm text-slate-400">%</span>
+            </div>
+            <span class="text-[11px] text-slate-400 block">Applies at qualifying equity conversion</span>
+          </div>
+        </div>
+
+        <!-- Calculated Ownership & Valuation Milestones -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-5 rounded-2xl bg-voidbg border border-lineborder">
+            <span class="font-mono text-xs uppercase text-slate-400 block">Est. Post-Money Ownership</span>
+            <span id="safe-out-ownership" class="font-mono text-3xl font-black text-white mt-1 block">2.00%</span>
+            <span id="safe-out-cap-note" class="text-xs text-slate-400 mt-1 block font-mono">At $1,500,000 AUD Cap</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-voidbg border border-cyanpulse/35">
+            <span class="font-mono text-xs uppercase text-cyanpulse block">Illustrative @ $6M Seed</span>
+            <span id="safe-out-seed" class="font-mono text-3xl font-black text-cyanpulse mt-1 block">$120,000</span>
+            <span id="safe-out-seed-mult" class="text-xs text-emeraldbolt mt-1 block font-mono">4.0x illustrative value</span>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-voidbg border border-emeraldbolt/35">
+            <span class="font-mono text-xs uppercase text-emeraldbolt block">Illustrative @ $20M Series A</span>
+            <span id="safe-out-seriesa" class="font-mono text-3xl font-black text-emeraldbolt mt-1 block">$400,000</span>
+            <span id="safe-out-seriesa-mult" class="text-xs text-emeraldbolt mt-1 block font-mono">13.3x illustrative value</span>
+          </div>
+        </div>
+
+        <!-- Request Australian SAFE Term Sheet Button -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-lineborder">
+          <p class="text-xs text-slate-400">
+            *Illustrative figures exclude future round dilution and are provided for informational modeling prior to formal SAFE execution.
+          </p>
+          <button
+            type="button"
+            onclick="openWalkthroughModal(['Australian SAFE Term Sheet', '24-Month Financial Model'])"
+            class="px-5 py-3 rounded-xl bg-gradient-to-r from-cyanpulse to-emeraldbolt hover:opacity-95 text-voidbg font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyanpulse/20 transition-all cursor-pointer shrink-0"
+          >
+            <i data-lucide="file-signature" class="w-4 h-4"></i>
+            <span>Request Australian SAFE Term Sheet</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="mt-20 border-t border-lineborder py-8 px-4 text-center text-xs text-slate-500 space-y-1.5">
+    <p class="text-slate-400 font-semibold">AuraFit AI Pty Ltd • Melbourne, Victoria, Australia</p>
+    <p>Pre-Seed Investor Pitch ($120,000 AUD) • Australian SAFE Structure • AWS Sydney (ap-southeast-2) & Australian Privacy Act / APPs Aligned</p>
+  </footer>
+
+  <!-- 8. INTERACTIVE 20-MINUTE WALKTHROUGH & DATA ROOM MODAL -->
+  <div id="walkthrough-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="surface-card max-w-xl w-full p-6 sm:p-8 rounded-3xl border border-cyanpulse/40 relative max-h-[92vh] overflow-y-auto">
+      <button
+        type="button"
+        onclick="closeWalkthroughModal()"
+        aria-label="Close modal"
+        class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-voidbg border border-lineborder text-slate-400 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+      >
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <!-- Booking Form -->
+      <div id="walkthrough-form-view" class="space-y-5">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-wider text-emeraldbolt font-bold">Melbourne Founders • AEST / AEDT</span>
+          <h3 class="text-2xl font-extrabold text-white mt-1">20-Minute Walkthrough & Data Room</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">
+            Select your preferred Melbourne slot and review topics for a focused 20-minute session.
+          </p>
+        </div>
+
+        <form onsubmit="handleWalkthroughSubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label for="wt-name" class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
+              <input
+                type="text"
+                id="wt-name"
+                required
+                placeholder="e.g. Claire Bennett"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-voidbg border border-lineborder text-white text-sm focus:outline-none focus:border-cyanpulse"
+              />
+            </div>
+            <div>
+              <label for="wt-email" class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
+              <input
+                type="email"
+                id="wt-email"
+                required
+                placeholder="claire@anzventures.com.au"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-voidbg border border-lineborder text-white text-sm focus:outline-none focus:border-cyanpulse"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="wt-firm" class="block text-xs font-semibold text-slate-300 mb-1">Firm / Syndicate / Family Office *</label>
+            <input
+              type="text"
+              id="wt-firm"
+              required
+              placeholder="e.g. Southern Cross Angel Group"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-voidbg border border-lineborder text-white text-sm focus:outline-none focus:border-cyanpulse"
+            />
+          </div>
+
+          <!-- Preferred Date / Time Slot (AEST / Melbourne Time) -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Preferred Slot (AEST / Melbourne Time) *</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="wt-slot-list">
+              <button
+                type="button"
+                onclick="pickSlot(this, 'Tue, 10:00 AM AEST (Melbourne)')"
+                class="wt-slot p-2.5 rounded-xl bg-voidbg border border-cyanpulse text-cyanpulse font-mono text-xs font-bold text-left cursor-pointer"
+              >
+                Tue, 10:00 AM AEST
+              </button>
+              <button
+                type="button"
+                onclick="pickSlot(this, 'Tue, 2:00 PM AEST (Melbourne)')"
+                class="wt-slot p-2.5 rounded-xl bg-voidbg border border-lineborder text-slate-300 hover:border-slate-500 font-mono text-xs text-left cursor-pointer"
+              >
+                Tue, 2:00 PM AEST
+              </button>
+              <button
+                type="button"
+                onclick="pickSlot(this, 'Thu, 11:30 AM AEST (Melbourne)')"
+                class="wt-slot p-2.5 rounded-xl bg-voidbg border border-lineborder text-slate-300 hover:border-slate-500 font-mono text-xs text-left cursor-pointer"
+              >
+                Thu, 11:30 AM AEST
+              </button>
+              <button
+                type="button"
+                onclick="pickSlot(this, 'Fri, 4:00 PM AEST (Melbourne)')"
+                class="wt-slot p-2.5 rounded-xl bg-voidbg border border-lineborder text-slate-300 hover:border-slate-500 font-mono text-xs text-left cursor-pointer"
+              >
+                Fri, 4:00 PM AEST
+              </button>
+            </div>
+          </div>
+
+          <!-- Review Topics Checkboxes -->
+          <div>
+            <span class="block text-xs font-semibold text-slate-300 mb-1.5">Walkthrough & Data Room Topics</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-200">
+              <label class="flex items-center gap-2 p-2.5 rounded-xl bg-voidbg border border-lineborder cursor-pointer">
+                <input type="checkbox" name="wt-topic" value="Interactive Prototype" checked class="rounded bg-panelbg border-lineborder text-emeraldbolt focus:ring-emeraldbolt" />
+                <span>Interactive Prototype</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-xl bg-voidbg border border-lineborder cursor-pointer">
+                <input type="checkbox" name="wt-topic" value="Architecture Blueprint" checked class="rounded bg-panelbg border-lineborder text-emeraldbolt focus:ring-emeraldbolt" />
+                <span>Architecture Blueprint</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-xl bg-voidbg border border-lineborder cursor-pointer">
+                <input type="checkbox" name="wt-topic" value="24-Month Financial Model" checked class="rounded bg-panelbg border-lineborder text-emeraldbolt focus:ring-emeraldbolt" />
+                <span>24-Month Financial Model</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-xl bg-voidbg border border-lineborder cursor-pointer">
+                <input type="checkbox" name="wt-topic" value="Australian SAFE Term Sheet" class="rounded bg-panelbg border-lineborder text-emeraldbolt focus:ring-emeraldbolt" />
+                <span>Australian SAFE Term Sheet</span>
+              </label>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emeraldbolt to-cyanpulse hover:opacity-95 text-voidbg font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg shadow-emeraldbolt/20 transition-all cursor-pointer"
+          >
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+            <span>Confirm 20-Min Walkthrough & Data Room</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Instant Confirmation Summary -->
+      <div id="walkthrough-confirm-view" class="hidden space-y-5 py-2">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-emeraldbolt/15 border border-emeraldbolt/40 text-emeraldbolt flex items-center justify-center shrink-0">
+            <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="font-mono text-xs uppercase text-emeraldbolt font-bold">Booking Confirmed</span>
+            <h3 class="text-xl font-extrabold text-white">20-Minute Walkthrough Reserved</h3>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-voidbg border border-lineborder font-mono text-xs space-y-2.5">
+          <div class="flex justify-between gap-2">
+            <span class="text-slate-400">Investor:</span>
+            <span id="sum-name" class="text-white font-bold text-right"></span>
+          </div>
+          <div class="flex justify-between gap-2">
+            <span class="text-slate-400">Organization:</span>
+            <span id="sum-firm" class="text-slate-200 text-right"></span>
+          </div>
+          <div class="flex justify-between gap-2">
+            <span class="text-slate-400">Email:</span>
+            <span id="sum-email" class="text-cyanpulse text-right"></span>
+          </div>
+          <div class="flex justify-between gap-2">
+            <span class="text-slate-400">Melbourne Slot:</span>
+            <span id="sum-slot" class="text-emeraldbolt font-bold text-right"></span>
+          </div>
+          <div class="pt-2 border-t border-lineborder">
+            <span class="text-slate-400 block mb-1">Requested Data Room & Walkthrough Topics:</span>
+            <span id="sum-topics" class="text-white leading-relaxed block"></span>
+          </div>
+        </div>
+
+        <p class="text-xs text-slate-400">
+          A calendar invitation and data room access link have been prepared for <span id="sum-email-note" class="text-slate-200 font-mono"></span>.
+        </p>
+
+        <button
+          type="button"
+          onclick="closeWalkthroughModal()"
+          class="w-full py-3 rounded-xl bg-panelhover hover:bg-slate-700 border border-lineborder text-white font-bold text-xs sm:text-sm transition-colors cursor-pointer"
+        >
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPLICATION SCRIPTS -->
+  <script>
+    // 24-Month Financial Scenarios (AUD)
+    // Starting cash = $120,000 AUD. Each month's cash updates from net flow.
+    const FINANCIAL_SCENARIOS = {
+      conservative: {
+        label: 'Conservative',
+        breakEven: 'Month 19',
+        mrr: [
+          0, 1200, 3200, 6400, 10200, 14500, 18800, 23200, 27600, 32200, 37000, 42000,
+          47500, 53500, 60000, 67000, 74500, 82500, 91000, 98500, 105000, 110500, 114500, 118000
+        ],
+        burn: [
+          18500, 19000, 20000, 23500, 26000, 28500, 32000, 35500, 39000, 43000, 47000, 51000,
+          56000, 61000, 66500, 72000, 77500, 82500, 86500, 90000, 93500, 97000, 100000, 103000
+        ],
+        subsByMonth: {
+          1: [0, 0],
+          3: [130, 8],
+          6: [640, 18],
+          12: [1880, 42],
+          15: [2680, 56],
+          18: [3680, 74],
+          24: [5260, 108]
+        },
+        stageByMonth: {
+          1: 'Discovery & Architecture',
+          3: 'Closed Beta & Founding Coaches',
+          6: 'Melbourne & ANZ Launch',
+          12: 'Year 1 Subscription Growth',
+          15: 'Efficiency & Retention Ramp',
+          18: 'Approaching Break-Even',
+          24: 'Profitable Scale ($1.42M ARR)'
+        }
+      },
+      base: {
+        label: 'Base Case',
+        breakEven: 'Month 15',
+        mrr: [
+          0, 1800, 5400, 11200, 18000, 25400, 32000, 38600, 45200, 51800, 58300, 64800,
+          71400, 78000, 84500, 92400, 101200, 110500, 119800, 129400, 139100, 148800, 158600, 168500
+        ],
+        burn: [
+          19000, 19500, 21000, 25000, 27500, 30500, 35000, 39500, 44500, 50500, 56000, 62000,
+          68500, 75000, 81500, 86000, 91000, 96500, 102000, 107500, 113000, 118500, 124000, 129500
+        ],
+        subsByMonth: {
+          1: [0, 0],
+          3: [220, 12],
+          6: [1120, 25],
+          12: [2880, 60],
+          15: [3760, 78],
+          18: [4920, 102],
+          24: [7500, 155]
+        },
+        stageByMonth: {
+          1: 'Discovery & Architecture',
+          3: 'Closed Beta & 12 Coaches',
+          6: 'ANZ Launch (1,500+ Users)',
+          12: 'Year 1 Scale',
+          15: 'Cash-Flow Break-Even',
+          18: 'Studio & Hybrid Pro Expansion',
+          24: 'Series A Trajectory ($2.02M ARR)'
+        }
+      },
+      upside: {
+        label: 'Upside',
+        breakEven: 'Month 11',
+        mrr: [
+          0, 2800, 8600, 17500, 27800, 38800, 47800, 56800, 65800, 74800, 83600, 92400,
+          103500, 115000, 127000, 139500, 152000, 165000, 178000, 191200, 204500, 218000, 231500, 245000
+        ],
+        burn: [
+          19500, 20500, 22500, 27000, 31000, 35000, 41500, 48500, 56000, 64000, 72500, 81500,
+          89000, 96500, 104000, 111500, 119000, 126500, 134000, 141500, 149000, 156500, 164000, 171500
+        ],
+        subsByMonth: {
+          1: [0, 0],
+          3: [350, 18],
+          6: [1710, 38],
+          12: [4100, 88],
+          15: [5640, 120],
+          18: [7340, 155],
+          24: [10900, 225]
+        },
+        stageByMonth: {
+          1: 'Discovery & Architecture',
+          3: 'Creator & Coach Beta',
+          6: 'Rapid ANZ Adoption',
+          12: 'Cash-Flow Positive ($1.11M ARR)',
+          15: 'APAC & Studio Rollout',
+          18: 'Multi-Tier Scale',
+          24: 'Breakout Scale ($2.94M ARR)'
+        }
+      }
+    };
+
+    let currentScenarioKey = 'base';
+    let currentSlotSelection = 'Tue, 10:00 AM AEST (Melbourne)';
+    let projectionChart = null;
+    let useOfFundsChart = null;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      initUseOfFundsChart();
+      initProjectionChart();
+      selectFinancialScenario('base');
+      recalculateSafe();
+    });
+
+    // Explorer Tab Switching (Tab 1: Simulator vs Tab 2: 4-Layer Stack)
+    function switchExplorerTab(tabKey) {
+      const simPanel = document.getElementById('explorer-panel-sim');
+      const stackPanel = document.getElementById('explorer-panel-stack');
+      const simBtn = document.getElementById('explorer-tab-sim');
+      const stackBtn = document.getElementById('explorer-tab-stack');
+
+      if (tabKey === 'sim') {
+        simPanel.classList.remove('hidden');
+        simPanel.classList.add('grid');
+        stackPanel.classList.add('hidden');
+        stackPanel.classList.remove('grid');
+
+        simBtn.className = 'explorer-tab px-4 py-2 rounded-lg text-xs font-bold transition-all bg-cyanpulse text-voidbg shadow-md flex items-center gap-2 cursor-pointer';
+        stackBtn.className = 'explorer-tab px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-300 hover:text-white flex items-center gap-2 cursor-pointer';
+      } else {
+        stackPanel.classList.remove('hidden');
+        stackPanel.classList.add('grid');
+        simPanel.classList.add('hidden');
+        simPanel.classList.remove('grid');
+
+        stackBtn.className = 'explorer-tab px-4 py-2 rounded-lg text-xs font-bold transition-all bg-emeraldbolt text-voidbg shadow-md flex items-center gap-2 cursor-pointer';
+        simBtn.className = 'explorer-tab px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-300 hover:text-white flex items-center gap-2 cursor-pointer';
+      }
+      lucide.createIcons();
+    }
+
+    // B2C Recovery Readiness Simulator (88% -> 48% Low Recovery)
+    function toggleRecoverySimulation(isLowRecovery) {
+      const readinessEl = document.getElementById('sim-readiness');
+      const readinessTag = document.getElementById('sim-readiness-tag');
+      const hrvEl = document.getElementById('sim-hrv');
+      const rhrEl = document.getElementById('sim-rhr');
+      const sleepEl = document.getElementById('sim-sleep');
+      const strainEl = document.getElementById('sim-strain');
+      const boxEl = document.getElementById('sim-workout-box');
+      const badgeEl = document.getElementById('sim-load-badge');
+      const titleEl = document.getElementById('sim-session-title');
+      const descEl = document.getElementById('sim-session-desc');
+      const volEl = document.getElementById('sim-volume-text');
+      const durEl = document.getElementById('sim-duration-text');
+      const btnLow = document.getElementById('btn-simulate-low');
+      const btnReset = document.getElementById('btn-simulate-reset');
+
+      if (isLowRecovery) {
+        readinessEl.innerText = '48%';
+        readinessEl.className = 'font-mono text-2xl sm:text-3xl font-black text-rose-400 mt-1 block';
+        readinessTag.innerText = 'Low Recovery';
+        readinessTag.className = 'font-mono text-[11px] text-rose-400 font-bold';
+
+        hrvEl.innerText = '43ms';
+        hrvEl.className = 'font-mono text-xl sm:text-2xl font-extrabold text-rose-400 mt-1 block';
+        rhrEl.innerText = '62 bpm (+11)';
+        sleepEl.innerText = '5h 18m';
+        strainEl.innerText = 'Deload Needed';
+        strainEl.className = 'font-mono text-xs text-amber-400';
+
+        boxEl.className = 'p-5 rounded-2xl bg-voidbg/95 border border-rose-500/45 space-y-3 transition-all';
+        badgeEl.innerText = 'AI AUTO-ADJUSTED • -45% LOAD & VOLUME';
+        badgeEl.className = 'px-2.5 py-0.5 rounded font-mono text-[11px] font-bold bg-rose-500/20 text-rose-300';
+        titleEl.innerText = 'Recovery Deload: Controlled Hinge, Mobility & Zone 2 Flush';
+        descEl.innerText = 'Readiness dropped to 48% with depressed HRV (43ms) and short sleep. AI cut heavy load by 45% and reduced sets to 2 light technical rounds to preserve consistency without CNS fatigue.';
+        volEl.innerText = '5,200 kg (-58%)';
+        durEl.innerText = '35 mins';
+
+        btnLow.classList.add('hidden');
+        btnReset.classList.remove('hidden');
+      } else {
+        readinessEl.innerText = '88%';
+        readinessEl.className = 'font-mono text-2xl sm:text-3xl font-black text-emeraldbolt mt-1 block';
+        readinessTag.innerText = 'Optimal';
+        readinessTag.className = 'font-mono text-[11px] text-emeraldbolt font-semibold';
+
+        hrvEl.innerText = '74ms';
+        hrvEl.className = 'font-mono text-xl sm:text-2xl font-extrabold text-cyanpulse mt-1 block';
+        rhrEl.innerText = '51 bpm RHR';
+        sleepEl.innerText = '7h 52m';
+        strainEl.innerText = 'Load Ready';
+        strainEl.className = 'font-mono text-xs text-emeraldbolt';
+
+        boxEl.className = 'p-5 rounded-2xl bg-voidbg/90 border border-emeraldbolt/40 space-y-3 transition-all';
+        badgeEl.innerText = '100% TARGET LOAD • 4 SETS';
+        badgeEl.className = 'px-2.5 py-0.5 rounded font-mono text-[11px] font-bold bg-emeraldbolt/20 text-emeraldbolt';
+        titleEl.innerText = 'Strength Block: Trap Bar Deadlift & Tempo Push';
+        descEl.innerText = 'Readiness at 88% with strong HRV recovery. Full volume prescribed: 4 working sets @ 80% 1RM, 3x10 Incline Dumbbell Press, 120s rest intervals.';
+        volEl.innerText = '12,400 kg';
+        durEl.innerText = '55 mins';
+
+        btnReset.classList.add('hidden');
+        btnLow.classList.remove('hidden');
+      }
+    }
+
+    // B2B Coach Exception Queue Resolution
+    function resolveTriageItem(btn) {
+      const countEl = document.getElementById('coach-flag-count');
+      let current = parseInt(countEl.innerText, 10) || 0;
+      if (current > 0) {
+        countEl.innerText = current - 1;
+      }
+      btn.innerText = 'Done';
+      btn.disabled = true;
+      btn.className = 'px-3 py-1.5 rounded-lg bg-emeraldbolt/20 text-emeraldbolt border border-emeraldbolt/40 font-mono text-xs font-bold shrink-0';
+    }
+
+    // Use of Funds Doughnut Chart
+    function initUseOfFundsChart() {
+      const ctx = document.getElementById('useOfFundsChart').getContext('2d');
+      useOfFundsChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: [
+            'Product Engineering & AI Core ($60k)',
+            'GTM & Founding Coach Acq. ($30k)',
+            'Cloud Infrastructure & LLM Ops ($15k)',
+            'Legal, IP & Privacy Compliance ($15k)'
+          ],
+          datasets: [{
+            data: [60000, 30000, 15000, 15000],
+            backgroundColor: ['#10B981', '#06B6D4', '#818CF8', '#FBBF24'],
+            borderColor: '#10182B',
+            borderWidth: 3,
+            hoverOffset: 5
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '66%',
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                color: '#CBD5E1',
+                font: { family: 'Inter', size: 11 },
+                boxWidth: 11,
+                padding: 12
+              }
+            },
+            tooltip: {
+              backgroundColor: '#090E1A',
+              borderColor: '#1E293B',
+              borderWidth: 1,
+              bodyFont: { family: 'JetBrains Mono', size: 12 },
+              callbacks: {
+                label: (item) => ` $${item.parsed.toLocaleString()} AUD`
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // 24-Month Financial Chart & Milestone Table
+    function initProjectionChart() {
+      const ctx = document.getElementById('projectionChart').getContext('2d');
+      const labels = Array.from({ length: 24 }, (_, idx) => `M${idx + 1}`);
+      const base = FINANCIAL_SCENARIOS.base;
+      const netFlow = base.mrr.map((val, i) => val - base.burn[i]);
+
+      projectionChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels,
+          datasets: [
+            {
+              type: 'line',
+              label: 'Net Cash Flow (AUD)',
+              data: netFlow,
+              borderColor: '#06B6D4',
+              backgroundColor: '#06B6D4',
+              borderWidth: 2.5,
+              pointRadius: 3,
+              tension: 0.32,
+              yAxisID: 'y1',
+              order: 1
+            },
+            {
+              type: 'bar',
+              label: 'Monthly Burn (AUD)',
+              data: base.burn,
+              backgroundColor: 'rgba(244, 63, 94, 0.55)',
+              borderColor: '#F43F5E',
+              borderWidth: 1,
+              borderRadius: 4,
+              yAxisID: 'y',
+              order: 3
+            },
+            {
+              type: 'bar',
+              label: 'MRR (AUD)',
+              data: base.mrr,
+              backgroundColor: 'rgba(16, 185, 129, 0.85)',
+              borderColor: '#10B981',
+              borderWidth: 1,
+              borderRadius: 4,
+              yAxisID: 'y',
+              order: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#090E1A',
+              borderColor: '#1E293B',
+              borderWidth: 1,
+              titleFont: { family: 'JetBrains Mono', size: 12 },
+              bodyFont: { family: 'JetBrains Mono', size: 11 },
+              callbacks: {
+                label: (item) => `${item.dataset.label}: $${item.parsed.y.toLocaleString()} AUD`
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: 'rgba(30, 41, 59, 0.45)' },
+              ticks: { color: '#94A3B8', font: { family: 'JetBrains Mono', size: 11 } }
+            },
+            y: {
+              type: 'linear',
+              position: 'left',
+              grid: { color: 'rgba(30, 41, 59, 0.45)' },
+              ticks: {
+                color: '#94A3B8',
+                font: { family: 'JetBrains Mono', size: 11 },
+                callback: (v) => '$' + Math.round(v / 1000) + 'k'
+              }
+            },
+            y1: {
+              type: 'linear',
+              position: 'right',
+              grid: { drawOnChartArea: false },
+              ticks: {
+                color: '#06B6D4',
+                font: { family: 'JetBrains Mono', size: 11 },
+                callback: (v) => (v < 0 ? '-$' + Math.abs(Math.round(v / 1000)) + 'k' : '+$' + Math.round(v / 1000) + 'k')
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function selectFinancialScenario(key) {
+      currentScenarioKey = key;
+      const scen = FINANCIAL_SCENARIOS[key];
+
+      document.querySelectorAll('.fin-scen-btn').forEach((btn) => {
+        btn.className = 'fin-scen-btn px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-300 hover:text-white cursor-pointer';
+      });
+      document.getElementById(`tab-scen-${key}`).className =
+        'fin-scen-btn px-4 py-2 rounded-lg text-xs font-bold transition-all bg-emeraldbolt text-voidbg shadow-md cursor-pointer';
+
+      // Compute cumulative cash across all 24 months from $120,000 AUD initial capital
+      let runningCash = 120000;
+      const cashByMonth = [];
+      for (let i = 0; i < 24; i++) {
+        runningCash += scen.mrr[i] - scen.burn[i];
+        cashByMonth.push(runningCash);
+      }
+
+      document.getElementById('fin-m24-mrr').innerText = `$${scen.mrr[23].toLocaleString()}`;
+      document.getElementById('fin-m24-burn').innerText = `$${scen.burn[23].toLocaleString()}`;
+      document.getElementById('fin-breakeven').innerText = scen.breakEven;
+      document.getElementById('fin-m24-cash').innerText = `$${cashByMonth[23].toLocaleString()}`;
+      document.getElementById('fin-scenario-pill').innerText = `Scenario: ${scen.label}`;
+
+      projectionChart.data.datasets[0].data = scen.mrr.map((m, idx) => m - scen.burn[idx]);
+      projectionChart.data.datasets[1].data = scen.burn;
+      projectionChart.data.datasets[2].data = scen.mrr;
+      projectionChart.update();
+
+      // Render Key Milestone Rows: Months 1, 3, 6, 12, 15, 18, 24
+      const milestoneMonths = [1, 3, 6, 12, 15, 18, 24];
+      const tbody = document.getElementById('milestone-table-rows');
+      tbody.innerHTML = '';
+
+      milestoneMonths.forEach((mNum) => {
+        const idx = mNum - 1;
+        const mrrVal = scen.mrr[idx];
+        const burnVal = scen.burn[idx];
+        const netVal = mrrVal - burnVal;
+        const cashVal = cashByMonth[idx];
+        const [b2cCount, b2bCount] = scen.subsByMonth[mNum];
+        const stageText = scen.stageByMonth[mNum];
+        const isBreakEvenRow = (key === 'base' && mNum === 15) || (key === 'conservative' && mNum === 18) || (key === 'upside' && mNum === 12);
+
+        const netFormatted = netVal >= 0 ? `+$${netVal.toLocaleString()}` : `-$${Math.abs(netVal).toLocaleString()}`;
+        const netColor = netVal >= 0 ? 'text-emeraldbolt font-bold' : 'text-rose-400';
+
+        const tr = document.createElement('tr');
+        tr.className = isBreakEvenRow ? 'bg-emeraldbolt/10' : 'hover:bg-panelhover/60 transition-colors';
+        tr.innerHTML = `
+          <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">
+            Month ${mNum}
+            ${isBreakEvenRow ? '<span class="ml-2 px-1.5 py-0.5 rounded text-[10px] bg-emeraldbolt text-voidbg font-extrabold">BREAK-EVEN</span>' : ''}
+          </td>
+          <td class="py-3.5 px-4 font-sans text-slate-300 whitespace-nowrap">${stageText}</td>
+          <td class="py-3.5 px-4 text-right text-slate-200">${b2cCount.toLocaleString()}</td>
+          <td class="py-3.5 px-4 text-right text-cyanpulse">${b2bCount}</td>
+          <td class="py-3.5 px-4 text-right font-bold text-emeraldbolt">$${mrrVal.toLocaleString()}</td>
+          <td class="py-3.5 px-4 text-right text-slate-400">$${burnVal.toLocaleString()}</td>
+          <td class="py-3.5 px-4 text-right ${netColor}">${netFormatted}</td>
+          <td class="py-3.5 px-4 text-right font-bold text-white">$${cashVal.toLocaleString()}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Australian SAFE Calculator
+    function syncSafeSlider(val) {
+      document.getElementById('safe-amount-input').value = val;
+      recalculateSafe();
+    }
+
+    function setDefaultSafeTerms() {
+      document.getElementById('safe-cap-input').value = 1500000;
+      document.getElementById('safe-discount-input').value = 20;
+      recalculateSafe();
+    }
+
+    function recalculateSafe() {
+      const amountInput = document.getElementById('safe-amount-input');
+      const sliderInput = document.getElementById('safe-amount-slider');
+      const capInput = document.getElementById('safe-cap-input');
+      const discInput = document.getElementById('safe-discount-input');
+
+      let investment = parseFloat(amountInput.value);
+      if (isNaN(investment)) investment = 30000;
+      investment = Math.max(10000, Math.min(120000, investment));
+      sliderInput.value = investment;
+
+      let cap = parseFloat(capInput.value);
+      if (isNaN(cap) || cap <= 0) cap = 1500000;
+
+      let discount = parseFloat(discInput.value);
+      if (isNaN(discount) || discount < 0) discount = 0;
+      if (discount > 80) discount = 80;
+
+      // Post-money cap ownership % (with discount factor if lower effective conversion price applies)
+      const ownershipPct = (investment / cap) * 100;
+      const discountMultiplier = 1 / (1 - discount / 100);
+
+      // Illustrative value at $6M AUD Seed and $20M AUD Series A milestones
+      const seedValuation = 6000000;
+      const seriesAValuation = 20000000;
+
+      const seedValue = (ownershipPct / 100) * seedValuation;
+      const seriesAValue = (ownershipPct / 100) * seriesAValuation;
+
+      const seedMult = seedValue / investment;
+      const seriesAMult = seriesAValue / investment;
+
+      document.getElementById('safe-out-ownership').innerText = `${ownershipPct.toFixed(2)}%`;
+      document.getElementById('safe-out-cap-note').innerText =
+        `Cap: $${Math.round(cap).toLocaleString()} AUD • ${discount}% Disc. (${discountMultiplier.toFixed(2)}x)`;
+
+      document.getElementById('safe-out-seed').innerText = `$${Math.round(seedValue).toLocaleString()}`;
+      document.getElementById('safe-out-seed-mult').innerText = `${seedMult.toFixed(1)}x illustrative value`;
+
+      document.getElementById('safe-out-seriesa').innerText = `$${Math.round(seriesAValue).toLocaleString()}`;
+      document.getElementById('safe-out-seriesa-mult').innerText = `${seriesAMult.toFixed(1)}x illustrative value`;
+    }
+
+    // 20-Minute Walkthrough & Data Room Modal
+    function openWalkthroughModal(precheckedTopics = null) {
+      const modal = document.getElementById('walkthrough-modal');
+      document.getElementById('walkthrough-form-view').classList.remove('hidden');
+      document.getElementById('walkthrough-confirm-view').classList.add('hidden');
+
+      if (Array.isArray(precheckedTopics)) {
+        const boxes = document.querySelectorAll('input[name="wt-topic"]');
+        boxes.forEach((cb) => {
+          cb.checked = precheckedTopics.includes(cb.value);
+        });
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeWalkthroughModal() {
+      const modal = document.getElementById('walkthrough-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function pickSlot(btn, slotLabel) {
+      currentSlotSelection = slotLabel;
+      document.querySelectorAll('.wt-slot').forEach((el) => {
+        el.className = 'wt-slot p-2.5 rounded-xl bg-voidbg border border-lineborder text-slate-300 hover:border-slate-500 font-mono text-xs text-left cursor-pointer';
+      });
+      btn.className = 'wt-slot p-2.5 rounded-xl bg-voidbg border border-cyanpulse text-cyanpulse font-mono text-xs font-bold text-left cursor-pointer';
+    }
+
+    function handleWalkthroughSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('wt-name').value.trim();
+      const email = document.getElementById('wt-email').value.trim();
+      const firm = document.getElementById('wt-firm').value.trim();
+      const checkedTopics = Array.from(document.querySelectorAll('input[name="wt-topic"]:checked')).map((el) => el.value);
+
+      document.getElementById('sum-name').innerText = name;
+      document.getElementById('sum-firm').innerText = firm;
+      document.getElementById('sum-email').innerText = email;
+      document.getElementById('sum-email-note').innerText = email;
+      document.getElementById('sum-slot').innerText = currentSlotSelection;
+      document.getElementById('sum-topics').innerText = checkedTopics.length > 0 ? checkedTopics.join(' • ') : 'General Walkthrough';
+
+      document.getElementById('walkthrough-form-view').classList.add('hidden');
+      document.getElementById('walkthrough-confirm-view').classList.remove('hidden');
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
