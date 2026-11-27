@@ -1,4 +1,1627 @@
 <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 Competitive Landscape: Digital Fitness Coaching & AI Personal Training</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              indigo: '#4F46E5',
+              emerald: '#10B981',
+              slate: '#0F172A'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.4);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(148, 163, 184, 0.7);
+    }
+
+    /* Print optimization */
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+      }
+      .print-break-inside {
+        break-inside: avoid;
+      }
+      .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl {
+        box-shadow: none !important;
+      }
+    }
+
+    /* Custom Range Slider */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 8px;
+      border-radius: 9999px;
+      background: #cbd5e1;
+    }
+    .dark input[type="range"]::-webkit-slider-runnable-track {
+      background: #334155;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      margin-top: -6px;
+      background-color: #10B981;
+      height: 20px;
+      width: 20px;
+      border-radius: 9999px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Sticky Executive Header & Navigation -->
+  <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <!-- Brand / Report Title -->
+        <div class="flex items-center gap-3 min-w-0">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-600 to-emerald-500 flex items-center justify-center text-white font-bold shadow-sm shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="truncate">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Executive Intelligence</span>
+              <span class="hidden sm:inline-block px-2 py-0.5 text-[11px] font-semibold rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">Q4 2026 Edition</span>
+            </div>
+            <p class="text-sm font-bold text-slate-900 dark:text-white truncate">Fitness Coach Market Dossier</p>
+          </div>
+        </div>
+
+        <!-- Smooth Jump Navigation Links (Desktop) -->
+        <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <a href="#executive-summary" class="px-3 py-2 rounded-lg text-slate-600 hover:text-indigo-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-indigo-400 dark:hover:bg-slate-800 transition">KPI Scorecard</a>
+          <a href="#market-trajectory" class="px-3 py-2 rounded-lg text-slate-600 hover:text-indigo-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-indigo-400 dark:hover:bg-slate-800 transition">Trajectory & Economics</a>
+          <a href="#competitive-matrix" class="px-3 py-2 rounded-lg text-slate-600 hover:text-indigo-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-indigo-400 dark:hover:bg-slate-800 transition">Competitor Matrix</a>
+          <a href="#strategic-trends" class="px-3 py-2 rounded-lg text-slate-600 hover:text-indigo-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-indigo-400 dark:hover:bg-slate-800 transition">2026 Trends</a>
+          <a href="#swot-roadmap" class="px-3 py-2 rounded-lg text-slate-600 hover:text-indigo-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-indigo-400 dark:hover:bg-slate-800 transition">SWOT & Roadmap</a>
+        </nav>
+
+        <!-- Actions: Theme Toggle & Print/Export -->
+        <div class="flex items-center gap-2 shrink-0">
+          <button id="themeToggleBtn" type="button" aria-label="Toggle Dark Mode" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+            <!-- Sun Icon (shown in dark mode) -->
+            <svg id="sunIcon" class="w-5 h-5 hidden dark:block text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <!-- Moon Icon (shown in light mode) -->
+            <svg id="moonIcon" class="w-5 h-5 block dark:hidden text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+
+          <button onclick="window.print()" type="button" class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-semibold shadow-sm transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            <span>Print / Export Summary</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Horizontal Scroll Nav -->
+      <div class="flex lg:hidden items-center gap-2 overflow-x-auto py-2 border-t border-slate-100 dark:border-slate-800 text-xs font-medium">
+        <a href="#executive-summary" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">KPIs</a>
+        <a href="#market-trajectory" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">Trajectory</a>
+        <a href="#competitive-matrix" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">Competitors</a>
+        <a href="#strategic-trends" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">2026 Trends</a>
+        <a href="#swot-roadmap" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">SWOT & Roadmap</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Report Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-16">
+
+    <!-- 1. EXECUTIVE HERO & KPI SCORECARD -->
+    <section id="executive-summary" class="space-y-8 scroll-mt-24">
+      <div class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-xl border border-slate-800 relative overflow-hidden">
+        <!-- Decorative subtle background glow -->
+        <div class="absolute -top-24 -right-24 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-semibold tracking-wide text-emerald-300">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            STAKEHOLDER MARKET INTELLIGENCE BRIEFING • 2026
+          </div>
+          <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+            2026 Competitive Landscape: Digital Fitness Coaching & AI Personal Training
+          </h1>
+          <p class="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-3xl">
+            The digital fitness sector has entered a decisive monetization and retention phase. While top-of-funnel app downloads have plateaued (+0.8% YoY), in-app revenue surged +13% as consumers replace $100+/hr human trainers with hyper-personalized AI, wearable-integrated, and hybrid coaching platforms.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-3 text-xs text-slate-300">
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10"><strong>Primary Thesis:</strong> Retention & Biometric Data Moats beat pure acquisition</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10"><strong>Core White Space:</strong> Unified Strength + Macro AI + GLP-1 Muscle Preservation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 KPI Scorecard Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- KPI 1 -->
+        <div class="group relative bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-indigo-400 dark:hover:border-indigo-500 transition-all print-break-inside">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Global Market Size</span>
+            <span class="p-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">$13.9B</h2>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">13.4% CAGR</span>
+          </div>
+          <p class="mt-2 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            2026 valuation, projected to reach <strong class="text-slate-900 dark:text-slate-200">$33.6B by 2033</strong>. Exercise & weight loss commands 53.7% share.
+          </p>
+          <!-- Hover Context Tooltip -->
+          <div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-indigo-600 dark:text-indigo-400 font-medium flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>North America leads (39.8%); APAC fastest CAGR</span>
+          </div>
+        </div>
+
+        <!-- KPI 2 -->
+        <div class="group relative bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-emerald-400 dark:hover:border-emerald-500 transition-all print-break-inside">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Revenue vs. Downloads</span>
+            <span class="p-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </span>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <h2 class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">+13.0%</h2>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">vs +0.8% DL</span>
+          </div>
+          <p class="mt-2 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            <strong class="text-slate-900 dark:text-slate-200">$4.5B+ In-App Revenue</strong> across 3.96B downloads—proving strong ARPU expansion despite flat install volume.
+          </p>
+          <div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>16x faster revenue growth than install growth</span>
+          </div>
+        </div>
+
+        <!-- KPI 3 -->
+        <div class="group relative bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-indigo-400 dark:hover:border-indigo-500 transition-all print-break-inside">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Trial-to-Paid Rate</span>
+            <span class="p-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">36.4%</h2>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">#1 Category</span>
+          </div>
+          <p class="mt-2 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Ranges <strong class="text-slate-900 dark:text-slate-200">35.0%–37.7%</strong> (highest across all app verticals). <strong class="text-slate-900 dark:text-slate-200">60.6%</strong> of conversions lock into annual plans.
+          </p>
+          <div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-indigo-600 dark:text-indigo-400 font-medium flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>High upfront intent driven by goal onboarding</span>
+          </div>
+        </div>
+
+        <!-- KPI 4 -->
+        <div class="group relative bg-white dark:bg-slate-900 rounded-2xl p-6 border border-amber-300/80 dark:border-amber-700/60 shadow-sm hover:shadow-md hover:border-amber-500 transition-all print-break-inside">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">1st-Renewal Retention</span>
+            <span class="p-2 rounded-xl bg-amber-50 dark:bg-amber-950/70 text-amber-600 dark:text-amber-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+            </span>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <h2 class="text-3xl font-extrabold text-amber-600 dark:text-amber-400">30.3%</h2>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">vs 58.1% Avg</span>
+          </div>
+          <p class="mt-2 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Lowest renewal retention across subscription verticals—exposing <strong class="text-slate-900 dark:text-slate-200">69.7% Year-1 churn</strong> and our #1 strategic wedge.
+          </p>
+          <div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-amber-700 dark:text-amber-400 font-medium flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Primary vulnerability & LTV expansion lever</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. INTERACTIVE MARKET TRAJECTORY & UNIT ECONOMICS EXPLORER -->
+    <section id="market-trajectory" class="space-y-6 scroll-mt-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Section 02 • Macro & Funnel Analytics</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Market Trajectory & Unit Economics Explorer</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Switch views to inspect 2025–2033 revenue projections or simulate how solving Year-1 retention transforms LTV.</p>
+        </div>
+
+        <!-- Dual-Tab Switcher -->
+        <div class="inline-flex p-1.5 rounded-2xl bg-slate-200/80 dark:bg-slate-800 border border-slate-300/60 dark:border-slate-700 self-start no-print">
+          <button id="tabBtnMarket" type="button" onclick="switchEconomyTab('market')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm transition">
+            Tab A: Market Size & Splits
+          </button>
+          <button id="tabBtnUnit" type="button" onclick="switchEconomyTab('unit')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
+            Tab B: Funnel & Retention Simulator
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB A: Market Forecast & Segment Shares -->
+      <div id="tabContentMarket" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Main Forecast Chart (7 cols) -->
+        <div class="lg:col-span-7 bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+            <div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Global Fitness App Market Forecast (2025–2033)</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">USD Billions • 13.4% Compound Annual Growth Rate (CAGR)</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">
+              +141.7% Growth (2026–2033)
+            </span>
+          </div>
+          <div class="relative w-full h-72 sm:h-80">
+            <canvas id="marketForecastChart"></canvas>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 grid grid-cols-3 gap-2 text-center text-xs">
+            <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60">
+              <span class="text-slate-500 dark:text-slate-400 block">2025 Baseline</span>
+              <strong class="text-sm text-slate-900 dark:text-white">$12.1B</strong>
+            </div>
+            <div class="p-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 border border-indigo-200 dark:border-indigo-800">
+              <span class="text-indigo-600 dark:text-indigo-400 block">2026 Current</span>
+              <strong class="text-sm text-indigo-700 dark:text-indigo-300">$13.9B</strong>
+            </div>
+            <div class="p-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/50">
+              <span class="text-emerald-600 dark:text-emerald-400 block">2033 Target</span>
+              <strong class="text-sm text-emerald-700 dark:text-emerald-300">$33.6B</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Segment & Regional/Platform Breakdown (5 cols) -->
+        <div class="lg:col-span-5 bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-6">
+          <div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Category Revenue Share (2026)</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Exercise & Weight Loss dominates consumer spend</p>
+            <div class="relative w-full h-48">
+              <canvas id="segmentShareChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Regional & Platform Split Bars -->
+          <div class="space-y-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span class="text-slate-700 dark:text-slate-300">Regional Share: North America vs. Rest of World</span>
+                <span class="text-indigo-600 dark:text-indigo-400">39.8% NA Share</span>
+              </div>
+              <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden flex">
+                <div class="bg-indigo-600 h-full" style="width: 39.8%" title="North America: 39.8%"></div>
+                <div class="bg-emerald-500 h-full" style="width: 28.4%" title="Europe: 28.4%"></div>
+                <div class="bg-amber-500 h-full" style="width: 22.8%" title="APAC (Fastest CAGR): 22.8%"></div>
+                <div class="bg-slate-400 h-full" style="width: 9.0%" title="RoW: 9.0%"></div>
+              </div>
+              <div class="flex flex-wrap justify-between text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 gap-2">
+                <span><strong class="text-indigo-600 dark:text-indigo-400">●</strong> NA (39.8%)</span>
+                <span><strong class="text-emerald-500">●</strong> EU (28.4%)</span>
+                <span><strong class="text-amber-500">●</strong> APAC (22.8%, Fastest CAGR)</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span class="text-slate-700 dark:text-slate-300">Platform Monetization: iOS vs. Android</span>
+                <span class="text-emerald-600 dark:text-emerald-400">52.0% iOS Revenue</span>
+              </div>
+              <div class="w-full h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden flex">
+                <div class="bg-slate-900 dark:bg-indigo-400 h-full" style="width: 52%" title="iOS: 52% Revenue Share"></div>
+                <div class="bg-emerald-500 h-full" style="width: 48%" title="Android: 48% Revenue Share"></div>
+              </div>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
+                iOS captures 52% of consumer spend (Apple Watch ecosystem lock-in), leaving Android underserved for AI strength apps.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB B: Subscription Funnel & Retention Impact Simulator -->
+      <div id="tabContentUnit" class="hidden grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Funnel Chart (6 cols) -->
+        <div class="lg:col-span-6 bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">2026 Fitness Subscription Funnel Benchmarks</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Fitness leads in trial conversion (36.4%) but trails all apps in Year-1 renewal (30.3% vs 58.1%)</p>
+            <div class="relative w-full h-72">
+              <canvas id="funnelBenchmarkChart"></canvas>
+            </div>
+          </div>
+          <div class="mt-4 p-3.5 rounded-xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 text-xs text-amber-900 dark:text-amber-200">
+            <strong>Diagnostic Insight:</strong> Because 60.6% of subscribers buy annual plans upfront, Year-1 cash flow is strong—but poor mid-year habit reinforcement triggers a 69.7% renewal cliff at Month 12.
+          </div>
+        </div>
+
+        <!-- Interactive Retention Impact Simulator (6 cols) -->
+        <div class="lg:col-span-6 bg-white dark:bg-slate-900 rounded-2xl p-6 border border-indigo-200 dark:border-indigo-900 shadow-sm flex flex-col justify-between space-y-6">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Interactive Financial Model</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">10,000 Paid Cohort</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Retention Impact & Year-2 LTV Simulator</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+              Model the revenue uplift for a 10,000-user annual subscriber cohort ($96/yr ARPU) by lifting first-renewal retention from the 30.3% industry average up to 50.0%.
+            </p>
+          </div>
+
+          <!-- Slider Control -->
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 space-y-3">
+            <div class="flex items-center justify-between">
+              <label for="retentionSlider" class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">Target 1st-Renewal Retention Rate</label>
+              <span id="retentionValueDisplay" class="text-xl font-extrabold text-emerald-600 dark:text-emerald-400">30.3%</span>
+            </div>
+            <input id="retentionSlider" type="range" min="30" max="50" step="0.5" value="30.3" class="w-full" />
+            <div class="flex justify-between text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+              <span>30.3% (2026 Fitness Avg)</span>
+              <span>40.0% (Top Quartile)</span>
+              <span>50.0% (Category Leader)</span>
+            </div>
+          </div>
+
+          <!-- Simulated Output KPIs -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <span class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 block">2-Year Cohort LTV</span>
+              <strong id="simLtvDisplay" class="text-xl font-extrabold text-slate-900 dark:text-white mt-1 block">$125.09</strong>
+              <span id="simLtvDelta" class="text-[11px] font-semibold text-slate-500 dark:text-slate-400">Baseline ($0.00 lift)</span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800">
+              <span class="text-[11px] font-semibold text-emerald-700 dark:text-emerald-300 block">Year-2 Renewal Revenue</span>
+              <strong id="simRevDisplay" class="text-xl font-extrabold text-emerald-700 dark:text-emerald-300 mt-1 block">$290,880</strong>
+              <span id="simRevLift" class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">+$0 incremental ARR</span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800">
+              <span class="text-[11px] font-semibold text-indigo-700 dark:text-indigo-300 block">Retained Users (Yr 2)</span>
+              <strong id="simUsersDisplay" class="text-xl font-extrabold text-indigo-700 dark:text-indigo-300 mt-1 block">3,030</strong>
+              <span id="simUsersLift" class="text-[11px] font-semibold text-indigo-600 dark:text-indigo-400">+0 saved subscribers</span>
+            </div>
+          </div>
+
+          <!-- Quick Preset Buttons -->
+          <div class="flex flex-wrap items-center gap-2 pt-1 no-print">
+            <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Quick Scenarios:</span>
+            <button type="button" onclick="setRetentionPreset(30.3)" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition">Industry Avg (30.3%)</button>
+            <button type="button" onclick="setRetentionPreset(42.0)" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-indigo-100 hover:bg-indigo-200 dark:bg-indigo-950 dark:hover:bg-indigo-900 text-indigo-700 dark:text-indigo-300 transition">Biometric Moat (42.0%)</button>
+            <button type="button" onclick="setRetentionPreset(50.0)" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-100 hover:bg-emerald-200 dark:bg-emerald-950 dark:hover:bg-emerald-900 text-emerald-700 dark:text-emerald-300 transition">Best-in-Class (50.0%)</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. INTERACTIVE COMPETITIVE MATRIX & SEGMENT FILTER -->
+    <section id="competitive-matrix" class="space-y-6 scroll-mt-24">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Section 03 • Competitive Intelligence</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Interactive Competitive Matrix & Segment Filter</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Filter across 9 market leaders by architecture, price tier, or keyword. Click any competitor to inspect SWOT & threat level.</p>
+        </div>
+
+        <!-- View Mode Toggle (Cards vs Table) -->
+        <div class="inline-flex p-1 rounded-xl bg-slate-200/80 dark:bg-slate-800 border border-slate-300/60 dark:border-slate-700 self-start no-print">
+          <button id="viewCardsBtn" type="button" onclick="setMatrixView('cards')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm transition">
+            Card Grid
+          </button>
+          <button id="viewTableBtn" type="button" onclick="setMatrixView('table')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
+            Comparison Table
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Controls Bar -->
+      <div class="bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 no-print">
+        <!-- Category Pills -->
+        <div class="flex flex-wrap items-center gap-2" id="categoryFilterContainer">
+          <button type="button" data-category="All" class="cat-pill active px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-600 text-white shadow-sm transition">All Competitors (9)</button>
+          <button type="button" data-category="Pure-AI Algorithmic" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">Pure-AI Algorithmic</button>
+          <button type="button" data-category="Hybrid Human + AI" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">Hybrid Human + AI</button>
+          <button type="button" data-category="Computer Vision / Form" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">Computer Vision / Form</button>
+          <button type="button" data-category="Holistic & Nutrition" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">Holistic & Nutrition</button>
+          <button type="button" data-category="B2B Coach SaaS" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">B2B Coach SaaS</button>
+        </div>
+
+        <!-- Search & Price Tier Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 pt-2 border-t border-slate-100 dark:border-slate-800">
+          <div class="sm:col-span-7 relative">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input id="competitorSearchInput" type="text" placeholder="Search competitor, feature (e.g., HRV, Apple Watch, LLM, strength)..." class="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+
+          <div class="sm:col-span-5 flex items-center gap-2">
+            <label for="priceTierSelect" class="text-xs font-semibold text-slate-500 dark:text-slate-400 whitespace-nowrap">Price Tier:</label>
+            <select id="priceTierSelect" class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="All">All Pricing Tiers</option>
+              <option value="Free / Freemium">Free / Freemium</option>
+              <option value="Mid-Tier ($12–$20/mo)">Mid-Tier ($12–$20/mo)</option>
+              <option value="Premium ($150+/mo)">Premium ($150+/mo)</option>
+              <option value="B2B SaaS">B2B SaaS / Tiered</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty State Message -->
+      <div id="competitorEmptyState" class="hidden text-center py-12 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800">
+        <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">No competitors match the active filter combination.</p>
+        <button type="button" onclick="resetCompetitorFilters()" class="mt-3 px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition">Reset All Filters</button>
+      </div>
+
+      <!-- Competitor Cards Container -->
+      <div id="competitorCardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Populated dynamically via JS -->
+      </div>
+
+      <!-- Competitor Comparison Table Container (Hidden by default) -->
+      <div id="competitorTableWrapper" class="hidden bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700 text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                <th class="py-3.5 px-4">Competitor</th>
+                <th class="py-3.5 px-4">Category</th>
+                <th class="py-3.5 px-4">Pricing Model</th>
+                <th class="py-3.5 px-4">Core Differentiator</th>
+                <th class="py-3.5 px-4">Threat Level</th>
+                <th class="py-3.5 px-4 text-right">Deep Dive</th>
+              </tr>
+            </thead>
+            <tbody id="competitorTableBody" class="divide-y divide-slate-100 dark:divide-slate-800 text-xs sm:text-sm">
+              <!-- Populated dynamically via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 2026 STRATEGIC TRENDS & WHITE-SPACE OPPORTUNITY RADAR -->
+    <section id="strategic-trends" class="space-y-6 scroll-mt-24">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Section 04 • Macro Shifts & White Space</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">2026 Strategic Trends & White-Space Opportunity Radar</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Explore the five structural shifts reshaping user expectations and defensibility in 2026.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Interactive Trend Selector List (5 cols) -->
+        <div class="lg:col-span-5 space-y-2.5" id="trendTabsList">
+          <!-- Populated via JS -->
+        </div>
+
+        <!-- Trend Detail Display Card (7 cols) -->
+        <div id="trendDetailCard" class="lg:col-span-7 bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between space-y-6">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. INTERACTIVE SWOT MATRIX & STAKEHOLDER ACTION ROADMAP -->
+    <section id="swot-roadmap" class="space-y-10 scroll-mt-24">
+      <!-- SWOT Matrix -->
+      <div class="space-y-5">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Section 05 • Strategic Positioning</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Interactive 2x2 SWOT & Countermeasure Matrix</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Click any SWOT quadrant to inspect the corresponding executive countermeasure and product strategy.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Strengths -->
+          <div onclick="selectSwot('strengths')" id="swot-strengths" class="swot-card cursor-pointer rounded-2xl p-6 bg-white dark:bg-slate-900 border-2 border-emerald-500/80 shadow-sm transition-all">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">STRENGTHS (Internal Advantage)</span>
+              <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">Click to Focus</span>
+            </div>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 list-disc pl-5">
+              <li><strong>85%–90% Cost Disruption:</strong> Delivers personalized programming at $15–$25/mo vs. $100+/hr in-person trainers.</li>
+              <li><strong>24/7 Biometric Adaptability:</strong> Instant workout auto-regulation using real-time sleep, HRV, and gym equipment availability.</li>
+              <li><strong>Zero-Marginal-Cost Scaling:</strong> AI coaching algorithms serve 100,000+ users without linear coach headcount growth.</li>
+            </ul>
+          </div>
+
+          <!-- Weaknesses -->
+          <div onclick="selectSwot('weaknesses')" id="swot-weaknesses" class="swot-card cursor-pointer rounded-2xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-400 shadow-sm transition-all">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">WEAKNESSES (Industry Vulnerability)</span>
+              <span class="text-xs font-semibold text-slate-400">Click to Focus</span>
+            </div>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 list-disc pl-5">
+              <li><strong>Severe Year-1 Renewal Cliff:</strong> 30.3% renewal rate (lowest in mobile subscriptions) due to fading motivation after 90 days.</li>
+              <li><strong>Accountability Deficit:</strong> Pure software lacks the emotional guilt/commitment of a human trainer waiting at 6:00 AM.</li>
+              <li><strong>Workflow Fragmentation:</strong> Users juggle separate apps for lifting logs, macro tracking, and cardio telemetry.</li>
+            </ul>
+          </div>
+
+          <!-- Opportunities -->
+          <div onclick="selectSwot('opportunities')" id="swot-opportunities" class="swot-card cursor-pointer rounded-2xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-400 shadow-sm transition-all">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">OPPORTUNITIES (2026 White Space)</span>
+              <span class="text-xs font-semibold text-slate-400">Click to Focus</span>
+            </div>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 list-disc pl-5">
+              <li><strong>Unified Strength + Macro AI Stack:</strong> Single-screen workout & photo/voice nutrition logging with closed-loop calorie adjustments.</li>
+              <li><strong>GLP-1 Muscle-Preservation Protocol:</strong> Specialized resistance + high-protein coaching for millions on metabolic weight-loss therapies.</li>
+              <li><strong>Android Power-User Parity:</strong> Capturing underserved Android gym enthusiasts neglected by iOS-first startups.</li>
+            </ul>
+          </div>
+
+          <!-- Threats -->
+          <div onclick="selectSwot('threats')" id="swot-threats" class="swot-card cursor-pointer rounded-2xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-rose-400 shadow-sm transition-all">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300">THREATS (External Risks)</span>
+              <span class="text-xs font-semibold text-slate-400">Click to Focus</span>
+            </div>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 list-disc pl-5">
+              <li><strong>Hardware Native AI Lock-In:</strong> Apple Health+, Garmin Coach, and WHOOP Coach bundling AI guidance directly into hardware subscriptions.</li>
+              <li><strong>Commodity LLM Wrappers:</strong> Low barriers to entry flooding app stores with generic ChatGPT-wrapper workout generators.</li>
+              <li><strong>Rising Paid CAC:</strong> Plateauing (+0.8%) install volume drives up Meta/TikTok customer acquisition costs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Dynamic Strategic Countermeasure Banner -->
+        <div id="swotActionBanner" class="p-5 rounded-2xl bg-slate-900 dark:bg-indigo-950/60 text-white border border-slate-800 dark:border-indigo-800/70 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <span id="swotBannerTag" class="text-[11px] font-bold uppercase tracking-wider text-emerald-400">Strategic Countermeasure • Leveraging Strengths</span>
+            <p id="swotBannerText" class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+              Position our core product at the $14.99/mo ($99/yr) "Sweet Spot" with instant onboarding—capturing price-sensitive consumers priced out of Future ($199/mo) while outperforming generic free trackers via progressive overload intelligence.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stakeholder Action Roadmap -->
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
+          <div>
+            <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">Prioritized Stakeholder Execution Roadmap</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Interactive alignment checklist — toggle milestones to track leadership sign-off.</p>
+          </div>
+          <div class="text-xs font-semibold px-3 py-1.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 self-start sm:self-auto">
+            Alignment Score: <span id="roadmapProgressText">4 / 9 Approved</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Phase 1 -->
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-lg bg-indigo-600 text-white text-xs font-bold">Phase 1 • Months 1–3</span>
+              <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">MVP & Core Wedge</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">Unified Strength + Macro Engine</h4>
+            <div class="space-y-2.5 text-xs">
+              <label class="flex items-start gap-2.5 cursor-pointer select-none">
+                <input type="checkbox" checked onchange="updateRoadmapCount()" class="roadmap-cb mt-0.5 rounded text-indigo-600 focus:ring-indigo-500" />
+                <span class="text-slate-700 dark:text-slate-300">Launch adaptive hypertrophy & strength engine with muscle-recovery heatmaps (iOS + Android parity).</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer select-none">
+                <input type="checkbox" checked onchange="updateRoadmapCount()" class="roadmap-cb mt-0.5 rounded text-indigo-600 focus:ring-indigo-500" />
+                <span class="text-slate-700 dark:text-slate-300">Embed conversational LLM workout modifier ("25 min hotel gym, sore shoulder").</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer select-none">
+                <input type="checkbox" onchange="updateRoadmapCount()" class="roadmap-cb mt-0.5 rounded text-indigo-600 focus:ring-indigo-500" />
+                <span class="text-slate-700 dark:text-slate-300">Integrate single-tap photo/voice macro & protein logging linked to daily training expenditure.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-xs font-bold">Phase 2 • Months 4–6</span>
+              <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Retention Moat</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">Closed-Loop Biometrics & GLP-1</h4>
+            <div class="space-y-2.5 text-xs">
+              <label class="flex items-start gap-2.5 cursor-pointer select-none">
+                <input type="checkbox" checked onchange="updateRoadmapCount()" class="roadmap-cb mt-0.5 rounded text-emerald-600 focus:ring-emerald-500" />
+                <span class="text-slate-700 dark:text-slate-300">Deploy Apple Health, Garmin, WHOOP & Oura readiness ingestion to auto-scale workout volume.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer select-none">
+                <input type="checkbox" checked onchange="updateRoadmapCount()" class="roadmap-cb mt-0.5 rounded text-emerald-600 focus:ring-emerald-500" />
+                <span class="text-slate-700 dark:text-slate-300">Release dedicated "GLP-1 Lean Mass Preservation" track with protein floor alerts & DEXA/body-comp tracking.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer select-none">
+                <input type="checkbox" onchange="updateRoadmapCount()" class="roadmap-cb mt-0.5 rounded text-emerald-600 focus:ring-emerald-500" />
+                <span class="text-slate-700 dark:text-slate-300">Launch 90-day longitudinal strength-curve milestones to lift renewal retention from 30.3% to 42%+.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800 dark:bg-slate-700 text-white text-xs font-bold">Phase 3 • Months 7–12</span>
+              <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Hybrid & B2B Scale</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">Tiered Human Coaching & Corporate</h4>
+            <div class="space-y-2.5 text-xs">
+              <label class="flex items-start gap-2.5 cursor-pointer select-none">
+                <input type="checkbox" onchange="updateRoadmapCount()" class="roadmap-cb mt-0.5 rounded text-indigo-600 focus:ring-indigo-500" />
+                <span class="text-slate-700 dark:text-slate-300">Introduce on-demand async human coach form-check credits ($39/mo add-on tier) for high-ARPU upsell.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer select-none">
+                <input type="checkbox" onchange="updateRoadmapCount()" class="roadmap-cb mt-0.5 rounded text-indigo-600 focus:ring-indigo-500" />
+                <span class="text-slate-700 dark:text-slate-300">Build B2B Corporate Wellness & GLP-1 employer benefit API packages to lower blended CAC.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer select-none">
+                <input type="checkbox" onchange="updateRoadmapCount()" class="roadmap-cb mt-0.5 rounded text-indigo-600 focus:ring-indigo-500" />
+                <span class="text-slate-700 dark:text-slate-300">Expand localized APAC & European strength programming to capture fastest-growing regional CAGRs.</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Executive Footer -->
+    <footer class="pt-6 pb-12 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+      <p><strong>2026 Digital Fitness Coaching Competitive Intelligence Report</strong> • Prepared for Executive & Product Stakeholders</p>
+      <p>Sources: Market Sizing & Subscription Benchmark Synthesis (2025–2033 Projections)</p>
+    </footer>
+  </main>
+
+  <!-- SLIDE-OVER MODAL / DRAWER FOR COMPETITOR DEEP DIVE -->
+  <div id="competitorModalBackdrop" class="fixed inset-0 z-50 hidden bg-slate-950/60 backdrop-blur-xs transition-opacity" onclick="closeCompetitorModal()">
+    <div id="competitorModalDrawer" class="fixed inset-y-0 right-0 max-w-lg w-full bg-white dark:bg-slate-900 shadow-2xl border-l border-slate-200 dark:border-slate-800 p-6 sm:p-8 overflow-y-auto flex flex-col justify-between" onclick="event.stopPropagation()">
+      <div id="competitorModalContent" class="space-y-6">
+        <!-- Populated dynamically -->
+      </div>
+      <div class="pt-6 mt-6 border-t border-slate-200 dark:border-slate-800 flex justify-end">
+        <button type="button" onclick="closeCompetitorModal()" class="px-5 py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800 text-white text-xs sm:text-sm font-semibold hover:bg-slate-800 dark:hover:bg-slate-700 transition">
+          Close Dossier
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT APPLICATION LOGIC -->
+  <script>
+    // ==========================================
+    // 1. DATA REPOSITORY (2026 MARKET & COMPETITORS)
+    // ==========================================
+    const competitorsData = [
+      {
+        id: 'fitbod',
+        name: 'Fitbod',
+        category: 'Pure-AI Algorithmic',
+        priceDisplay: '$15.99/mo or $95.99/yr',
+        priceTier: 'Mid-Tier ($12–$20/mo)',
+        targetUser: 'Gym Strength & Hypertrophy Lifters',
+        coreTech: 'Muscle-recovery heatmaps & non-linear periodization algorithm',
+        threatLevel: 'High',
+        threatBadge: 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300',
+        summary: 'The category benchmark for algorithmic gym strength training. Dynamically scales sets, reps, and weights using muscle fatigue tracking and available gym equipment profiles.',
+        strengths: [
+          'Best-in-class muscle recovery heatmap visualization that drives daily habit loops.',
+          'Massive exercise library (1,000+ movements) with clean HD video demonstrations.',
+          'Strong Apple Watch & Apple Health bidirectional workout logging.'
+        ],
+        vulnerabilities: [
+          'Zero native nutrition, macro tracking, or meal planning capabilities.',
+          'Rigid algorithmic logic can feel impersonal without conversational LLM flexibility.',
+          'Historically iOS-first feature parity lag on Android.'
+        ],
+        strategicTakeaway: 'Win against Fitbod by matching its progressive overload intelligence while unifying macro/protein coaching and conversational workout edits.'
+      },
+      {
+        id: 'freeletics',
+        name: 'Freeletics',
+        category: 'Pure-AI Algorithmic',
+        priceDisplay: 'Freemium / ~$12.99/mo',
+        priceTier: 'Mid-Tier ($12–$20/mo)',
+        targetUser: 'Bodyweight, HIIT & Home Fitness Athletes',
+        coreTech: 'Adaptive AI coach adjusting to space, noise, and equipment constraints',
+        threatLevel: 'Medium-High',
+        threatBadge: 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
+        summary: 'European market leader in AI-driven calisthenics and HIIT conditioning. Rebuilds sessions immediately when users report soreness, time limits, or quiet-workout needs.',
+        strengths: [
+          'Exceptional brand equity in Europe and strong community gamification ("Claps" & leaderboards).',
+          'Instant session adaptation ("I have no space" / "Quiet mode") with zero equipment required.',
+          'Audio mindset & recovery coaching bundled into higher tiers.'
+        ],
+        vulnerabilities: [
+          'Weaker appeal for traditional barbell/machine hypertrophy lifters.',
+          'High workout intensity can trigger beginner burnout and 90-day churn.',
+          'Limited deep wearable HRV auto-regulation compared to biometric-native apps.'
+        ],
+        strategicTakeaway: 'Emulate Freeletics’ instant constraint-adaptation UX ("no space / limited time") inside a broader strength + nutrition ecosystem.'
+      },
+      {
+        id: 'future',
+        name: 'Future',
+        category: 'Hybrid Human + AI',
+        priceDisplay: '$199/mo',
+        priceTier: 'Premium ($150+/mo)',
+        targetUser: 'Affluent, High-Intent Accountability Seekers',
+        coreTech: 'Dedicated 1-on-1 human trainer + Apple Watch biometric telemetry',
+        threatLevel: 'Medium',
+        threatBadge: 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
+        summary: 'The gold standard in high-touch digital personal training. Pairs every member with a dedicated human coach who builds custom plans and monitors Apple Watch heart-rate compliance daily.',
+        strengths: [
+          'Industry-leading retention driven by real human accountability and daily check-ins.',
+          'Deep Apple Watch telemetry integration letting coaches verify real effort.',
+          'High LTV per user ($2,000+ annualized).'
+        ],
+        vulnerabilities: [
+          '$199/mo price point caps TAM to top-decile income earners.',
+          'Human coach labor costs constrain gross margins and scaling speed.',
+          'Requires smartwatch hardware for optimal experience.'
+        ],
+        strategicTakeaway: 'Capture the 90% of users priced out of Future by offering AI daily coaching at $15/mo plus optional async human check-in credits.'
+      },
+      {
+        id: 'caliber',
+        name: 'Caliber',
+        category: 'Hybrid Human + AI',
+        priceDisplay: 'Free tier to $200+/mo',
+        priceTier: 'Free / Freemium',
+        targetUser: 'Evidence-Based Strength & Body Recomp Users',
+        coreTech: 'Freemium strength logger scaling into 1-on-1 human nutrition + lifting coaching',
+        threatLevel: 'High',
+        threatBadge: 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300',
+        summary: 'Smartly bridges PLG (Product-Led Growth) and high-ticket human coaching. Acquires users via a generous free strength tracker and upsells structured 1-on-1 coaching.',
+        strengths: [
+          'Zero-friction freemium acquisition funnel with proprietary "Strength Score" gamification.',
+          'Holistic methodology combining progressive resistance training and macro coaching.',
+          'High trust among evidence-based fitness consumers.'
+        ],
+        vulnerabilities: [
+          'Large pricing chasm between free/self-guided tier and $200/mo human coaching.',
+          'Manual nutrition logging relies on third-party syncs (Cronometer/MyFitnessPal) rather than native AI.'
+        ],
+        strategicTakeaway: 'Bridge Caliber’s pricing gap with an autonomous AI Coach + native AI nutrition tier at $14.99–$24.99/mo.'
+      },
+      {
+        id: 'edge',
+        name: 'Edge',
+        category: 'Holistic & Nutrition',
+        priceDisplay: 'Web/Mobile Freemium',
+        priceTier: 'Free / Freemium',
+        targetUser: 'Hybrid Athletes (Running + Lifting + Mobility)',
+        coreTech: 'Unified multi-discipline programming + real coach messaging',
+        threatLevel: 'Medium',
+        threatBadge: 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
+        summary: 'Built for the booming "Hybrid Athlete" demographic balancing half-marathon/Hyrox endurance training with strength and mobility in one calendar.',
+        strengths: [
+          'Solves the conflict between running fatigue and leg-day strength programming.',
+          'Cross-platform web + mobile accessibility with integrated coach messaging.'
+        ],
+        vulnerabilities: [
+          'Smaller brand footprint and content library than Fitbod or Freeletics.',
+          'Less specialized for pure weight-loss or GLP-1 metabolic consumers.'
+        ],
+        strategicTakeaway: 'Incorporate hybrid endurance + strength load balancing so runners/Hyrox athletes do not churn to niche apps.'
+      },
+      {
+        id: 'sensai',
+        name: 'SensAI',
+        category: 'Pure-AI Algorithmic',
+        priceDisplay: 'Subscription (~$14.99/mo)',
+        priceTier: 'Mid-Tier ($12–$20/mo)',
+        targetUser: 'Wearable & Quantified-Self Enthusiasts',
+        coreTech: 'Real-time workout rewriting via HRV, sleep staging & resting HR',
+        threatLevel: 'Medium',
+        threatBadge: 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
+        summary: 'Recovery-first AI trainer that ingests Apple Health biometric readiness signals every morning to auto-regulate training intensity and prevent overtraining.',
+        strengths: [
+          'True closed-loop biometric adaptation rather than static calendar schedules.',
+          'Strong resonance with Oura, WHOOP, and Apple Watch power users.'
+        ],
+        vulnerabilities: [
+          'Narrow value proposition for users who do not wear sleep-tracking devices.',
+          'Minimal nutrition or conversational LLM coaching features.'
+        ],
+        strategicTakeaway: 'Make biometric readiness auto-regulation a core pillar of our retention moat while supporting non-wearable users seamlessly.'
+      },
+      {
+        id: 'kemtai',
+        name: 'Kemtai',
+        category: 'Computer Vision / Form',
+        priceDisplay: 'Freemium / Tiered',
+        priceTier: 'Free / Freemium',
+        targetUser: 'Home Exercisers & Physical Rehab Patients',
+        coreTech: 'Real-time smartphone camera biomechanical motion tracking & form cues',
+        threatLevel: 'Low-Medium',
+        threatBadge: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300',
+        summary: 'Uses device cameras without extra hardware to track 44+ skeletal keypoints, count reps automatically, and deliver real-time corrective audio/visual feedback.',
+        strengths: [
+          'Differentiated real-time form correction reduces injury anxiety for beginners.',
+          'Strong B2B licensing traction in digital physical therapy and corporate wellness.'
+        ],
+        vulnerabilities: [
+          'Setting up a phone tripod/prop in a crowded commercial gym is impractical.',
+          'High battery consumption during extended camera-on sessions.'
+        ],
+        strategicTakeaway: 'Offer optional "Quick Form Check" camera mode for home workouts without forcing camera setup during commercial gym sessions.'
+      },
+      {
+        id: 'chattyfit',
+        name: 'ChattyFit',
+        category: 'Pure-AI Algorithmic',
+        priceDisplay: 'Freemium / Sub',
+        priceTier: 'Free / Freemium',
+        targetUser: 'Casual & Busy Users Seeking Zero-Friction Setup',
+        coreTech: 'Conversational LLM workout generation & natural-language chat interface',
+        threatLevel: 'Medium',
+        threatBadge: 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
+        summary: 'Replaces complex onboarding forms with a natural-language AI trainer that builds and adapts workouts through simple conversational prompts.',
+        strengths: [
+          'Near-zero onboarding friction—users generate a tailored plan in 15 seconds.',
+          'Handles messy real-world constraints effortlessly ("hotel gym, 18 mins, knee pain").'
+        ],
+        vulnerabilities: [
+          'Thin defensibility—easily replicated by ChatGPT/Claude or larger fitness incumbents.',
+          'Lacks deep longitudinal strength analytics and structured periodization.'
+        ],
+        strategicTakeaway: 'Pair conversational LLM flexibility with structured periodization and longitudinal biometric memory so users never outgrow the app.'
+      },
+      {
+        id: 'everfit',
+        name: 'Everfit / Trainerize',
+        category: 'B2B Coach SaaS',
+        priceDisplay: 'B2B SaaS ($19–$350+/mo)',
+        priceTier: 'B2B SaaS',
+        targetUser: 'Independent Personal Trainers, Studios & Gyms',
+        coreTech: 'White-label remote coaching, habit tracking & payment infrastructure',
+        threatLevel: 'Low (Indirect)',
+        threatBadge: 'bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300',
+        summary: 'The "Shopify for Personal Trainers." Powers tens of thousands of human coaches and boutique gyms with branded client apps, workout builders, and automated check-ins.',
+        strengths: [
+          'Deep B2B workflow lock-in once a trainer migrates 50+ clients onto the platform.',
+          'Rolling out AI assistant tools to help human coaches write programs faster.'
+        ],
+        vulnerabilities: [
+          'B2B SaaS model requires human coach acquisition rather than direct D2C scale.',
+          'Client experience depends heavily on the individual trainer’s responsiveness.'
+        ],
+        strategicTakeaway: 'Potential Phase 3 B2B channel partner—license our AI nutrition & biometric engine to independent coaches.'
+      }
+    ];
+
+    const trendsData = [
+      {
+        id: 'trend1',
+        badge: 'Trend 01 • Defensibility',
+        title: 'Retention Over Acquisition ("Data Moat" Strategy)',
+        metric: '+0.8% Installs vs +13% IAP Revenue',
+        summary: 'With global fitness app downloads growing just 0.8% YoY (3.96B), customer acquisition costs have climbed sharply. Market winners are shifting R&D from top-of-funnel ads to longitudinal "Data Moats."',
+        implications: [
+          'Apps that accumulate 90+ days of strength curves, HRV baselines, and macro adherence create high psychological switching costs.',
+          'Predictive churn triggers (e.g., detecting 2 missed workouts and proactively offering a 15-minute "deload session") lift Year-1 renewals above 42%.'
+        ],
+        opportunity: 'Build a persistent "Fitness Digital Twin" profile that gets visibly smarter every 30 days, making switching to a blank-slate competitor painful.'
+      },
+      {
+        id: 'trend2',
+        badge: 'Trend 02 • Hardware Synergy',
+        title: 'Closed-Loop Biometric & Wearable Integration',
+        metric: '#1 ACSM Global Fitness Trend',
+        summary: 'Wearable technology remains the #1 global fitness trend. Modern coaching apps no longer rely on static 12-week PDFs; they ingest real-time sleep staging, HRV, and resting heart rate to auto-adjust daily load.',
+        implications: [
+          'When WHOOP, Oura, Garmin, or Apple Watch signals poor recovery, the AI automatically swaps heavy compound lifts for mobility or Zone-2 cardio.',
+          'Eliminates user guilt and overtraining injuries—two top drivers of 60-day subscription cancellation.'
+        ],
+        opportunity: 'Offer effortless bidirectional sync across Apple Health, Garmin, WHOOP, and Oura—plus a non-wearable "2-tap morning readiness check" for Android/non-watch users.'
+      },
+      {
+        id: 'trend3',
+        badge: 'Trend 03 • UX Paradigm Shift',
+        title: 'Conversational LLM & Multi-Modal Interfaces',
+        metric: '3x Faster Session Customization',
+        summary: 'Rigid dropdown menus are being replaced by natural-language and voice-first AI coaches. Users expect to speak or type real-world context mid-workout and watch their session restructure instantly.',
+        implications: [
+          'Prompts like "Bench press is taken, my lower back is tight, and I have 22 minutes left" must trigger instant biomechanical substitutions.',
+          'Multi-modal voice cues and optional camera rep-counting reduce screen-staring fatigue during workouts.'
+        ],
+        opportunity: 'Combine an intuitive one-tap visual workout player with an embedded conversational AI co-pilot for instant mid-session pivots.'
+      },
+      {
+        id: 'trend4',
+        badge: 'Trend 04 • Clinical & Metabolic',
+        title: 'GLP-1 & Metabolic Health Specialization',
+        metric: 'High-Growth Clinical Adjacent Segment',
+        summary: 'Rapid adoption of GLP-1 weight-loss medications has created an urgent clinical need: up to 25%–40% of rapid weight loss can come from lean muscle mass without targeted resistance training and protein intake.',
+        implications: [
+          'Mainstream HIIT apps are poorly suited for GLP-1 users experiencing lower energy and appetite suppression.',
+          'Dedicated progressive strength + daily protein-floor coaching directly protects metabolic rate and lean body mass.'
+        ],
+        opportunity: 'Launch a dedicated "Metabolic & Lean Mass Preservation" mode featuring low-fatigue hypertrophy blocks, protein targets, and fatigue-aware auto-scaling.'
+      },
+      {
+        id: 'trend5',
+        badge: 'Trend 05 • Product Consolidation',
+        title: 'Unified "Training + Nutrition + Recovery" Stacks',
+        metric: 'Eliminating Multi-App Subscription Fatigue',
+        summary: 'Consumers in 2026 are actively consolidating subscriptions. Paying $15/mo for a workout app plus $20/mo for a macro tracker creates friction and disconnected data silos.',
+        implications: [
+          'Nutrition drives 70%+ of body-composition outcomes, yet top strength apps (Fitbod, SensAI) ignore diet completely.',
+          'When training volume automatically informs daily calorie and protein targets—and vice versa—users see faster visible results.'
+        ],
+        opportunity: 'Deliver an all-in-one AI Strength + Photo/Voice Macro + Recovery platform at a single unified price point ($14.99/mo).'
+      }
+    ];
+
+    const swotCountermeasures = {
+      strengths: {
+        tag: 'Strategic Countermeasure • Leveraging Strengths',
+        text: 'Position our core product at the $14.99/mo ($99/yr) "Sweet Spot" with instant onboarding—capturing price-sensitive consumers priced out of Future ($199/mo) while outperforming generic free trackers via progressive overload intelligence.'
+      },
+      weaknesses: {
+        tag: 'Strategic Countermeasure • Neutralizing Weaknesses',
+        text: 'Combat the 30.3% Year-1 renewal cliff by pairing AI daily programming with habit-streak milestones, predictive "missed-workout recovery plans," and optional async human coach form-check credits.'
+      },
+      opportunities: {
+        tag: 'Strategic Countermeasure • Capturing White Space',
+        text: 'Own the unified "Strength + Macro AI + GLP-1 Lean Mass" stack across both iOS and Android—eliminating the two-app tax consumers currently pay for lifting logs and nutrition trackers.'
+      },
+      threats: {
+        tag: 'Strategic Countermeasure • Defending Against Threats',
+        text: 'Avoid commoditized LLM-wrapper traps by anchoring our AI in proprietary periodization algorithms, longitudinal user strength graphs, and cross-wearable readiness ingestion.'
+      }
+    };
+
+    // ==========================================
+    // 2. THEME TOGGLE & CHART.JS INITIALIZATION
+    // ==========================================
+    let marketChartInstance = null;
+    let segmentChartInstance = null;
+    let funnelChartInstance = null;
+
+    function isDarkMode() {
+      return document.documentElement.classList.contains('dark');
+    }
+
+    function getChartColors() {
+      const dark = isDarkMode();
+      return {
+        text: dark ? '#cbd5e1' : '#475569',
+        heading: dark ? '#f8fafc' : '#0f172a',
+        grid: dark ? 'rgba(148, 163, 184, 0.12)' : 'rgba(148, 163, 184, 0.2)',
+        indigo: '#4F46E5',
+        indigoFill: dark ? 'rgba(79, 70, 229, 0.25)' : 'rgba(79, 70, 229, 0.14)',
+        emerald: '#10B981',
+        amber: '#F59E0B',
+        slate: dark ? '#64748b' : '#94a3b8'
+      };
+    }
+
+    function initCharts() {
+      const c = getChartColors();
+
+      // Destroy existing if re-rendering on theme change
+      if (marketChartInstance) marketChartInstance.destroy();
+      if (segmentChartInstance) segmentChartInstance.destroy();
+      if (funnelChartInstance) funnelChartInstance.destroy();
+
+      // Chart 1: Market Size Forecast (2025 - 2033)
+      const ctxMarket = document.getElementById('marketForecastChart').getContext('2d');
+      marketChartInstance = new Chart(ctxMarket, {
+        type: 'line',
+        data: {
+          labels: ['2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033'],
+          datasets: [{
+            label: 'Global Fitness App Market ($B)',
+            data: [12.1, 13.9, 15.8, 17.9, 20.3, 23.0, 26.1, 29.6, 33.6],
+            borderColor: c.indigo,
+            backgroundColor: c.indigoFill,
+            borderWidth: 3,
+            fill: true,
+            tension: 0.35,
+            pointBackgroundColor: [c.slate, c.emerald, c.indigo, c.indigo, c.indigo, c.indigo, c.indigo, c.indigo, c.emerald],
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 2,
+            pointRadius: [5, 7, 4, 4, 4, 4, 4, 4, 7],
+            pointHoverRadius: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#0f172a',
+              titleColor: '#f8fafc',
+              bodyColor: '#e2e8f0',
+              padding: 12,
+              cornerRadius: 10,
+              callbacks: {
+                label: (ctx) => ` Market Valuation: $${ctx.parsed.y.toFixed(1)} Billion`
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { color: c.text, font: { family: 'Inter', size: 11, weight: '600' } }
+            },
+            y: {
+              beginAtZero: true,
+              grid: { color: c.grid },
+              ticks: {
+                color: c.text,
+                font: { family: 'Inter', size: 11 },
+                callback: (val) => `$${val}B`
+              }
+            }
+          }
+        }
+      });
+
+      // Chart 2: Segment Share Doughnut
+      const ctxSegment = document.getElementById('segmentShareChart').getContext('2d');
+      segmentChartInstance = new Chart(ctxSegment, {
+        type: 'doughnut',
+        data: {
+          labels: ['Exercise & Weight Loss (53.7%)', 'Diet & Nutrition (27.8%)', 'Activity & Recovery Tracking (18.5%)'],
+          datasets: [{
+            data: [53.7, 27.8, 18.5],
+            backgroundColor: [c.indigo, c.emerald, c.amber],
+            borderWidth: 2,
+            borderColor: isDarkMode() ? '#0f172a' : '#ffffff',
+            hoverOffset: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '64%',
+          plugins: {
+            legend: {
+              position: 'right',
+              labels: {
+                color: c.text,
+                boxWidth: 12,
+                padding: 12,
+                font: { family: 'Inter', size: 11, weight: '600' }
+              }
+            },
+            tooltip: {
+              backgroundColor: '#0f172a',
+              padding: 10,
+              cornerRadius: 8,
+              callbacks: {
+                label: (ctx) => ` ${ctx.label}`
+              }
+            }
+          }
+        }
+      });
+
+      // Chart 3: Subscription Funnel & Retention Benchmark Bar Chart
+      const ctxFunnel = document.getElementById('funnelBenchmarkChart').getContext('2d');
+      funnelChartInstance = new Chart(ctxFunnel, {
+        type: 'bar',
+        data: {
+          labels: ['Trial-to-Paid Conversion', 'Annual Plan Mix', '1st-Renewal Retention'],
+          datasets: [
+            {
+              label: 'Fitness Coaching Apps (2026)',
+              data: [36.4, 60.6, 30.3],
+              backgroundColor: [c.indigo, c.emerald, c.amber],
+              borderRadius: 8,
+              barPercentage: 0.55
+            },
+            {
+              label: 'All Subscription Apps Benchmark',
+              data: [28.5, 44.2, 58.1],
+              backgroundColor: c.slate,
+              borderRadius: 8,
+              barPercentage: 0.55
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                color: c.text,
+                boxWidth: 12,
+                font: { family: 'Inter', size: 11, weight: '600' }
+              }
+            },
+            tooltip: {
+              backgroundColor: '#0f172a',
+              padding: 10,
+              cornerRadius: 8,
+              callbacks: {
+                label: (ctx) => ` ${ctx.dataset.label}: ${ctx.parsed.y}%`
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { color: c.text, font: { family: 'Inter', size: 11, weight: '600' } }
+            },
+            y: {
+              beginAtZero: true,
+              max: 75,
+              grid: { color: c.grid },
+              ticks: {
+                color: c.text,
+                font: { family: 'Inter', size: 11 },
+                callback: (v) => `${v}%`
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Theme Toggle Handler
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      initCharts();
+    });
+
+    // ==========================================
+    // 3. MARKET TRAJECTORY & SIMULATOR LOGIC
+    // ==========================================
+    function switchEconomyTab(tab) {
+      const btnMarket = document.getElementById('tabBtnMarket');
+      const btnUnit = document.getElementById('tabBtnUnit');
+      const contentMarket = document.getElementById('tabContentMarket');
+      const contentUnit = document.getElementById('tabContentUnit');
+
+      if (tab === 'market') {
+        btnMarket.className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm transition';
+        btnUnit.className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition';
+        contentMarket.classList.remove('hidden');
+        contentMarket.classList.add('grid');
+        contentUnit.classList.add('hidden');
+        contentUnit.classList.remove('grid');
+      } else {
+        btnUnit.className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm transition';
+        btnMarket.className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition';
+        contentUnit.classList.remove('hidden');
+        contentUnit.classList.add('grid');
+        contentMarket.classList.add('hidden');
+        contentMarket.classList.remove('grid');
+      }
+    }
+
+    // Retention Simulator Calculations
+    const retentionSlider = document.getElementById('retentionSlider');
+    function updateRetentionSimulator(rateVal) {
+      const rate = parseFloat(rateVal);
+      const cohortSize = 10000;
+      const annualArpu = 96; // $96/yr benchmark
+      const baselineRate = 0.303;
+      const targetRate = rate / 100;
+
+      const baselineRetained = Math.round(cohortSize * baselineRate);
+      const targetRetained = Math.round(cohortSize * targetRate);
+      const savedUsers = targetRetained - baselineRetained;
+
+      const baselineYr2Rev = baselineRetained * annualArpu;
+      const targetYr2Rev = targetRetained * annualArpu;
+      const incrementalRev = targetYr2Rev - baselineYr2Rev;
+
+      const baselineLtv = annualArpu * (1 + baselineRate);
+      const targetLtv = annualArpu * (1 + targetRate);
+      const ltvLift = targetLtv - baselineLtv;
+
+      document.getElementById('retentionValueDisplay').textContent = `${rate.toFixed(1)}%`;
+      document.getElementById('simLtvDisplay').textContent = `$${targetLtv.toFixed(2)}`;
+      document.getElementById('simLtvDelta').textContent = ltvLift >= 0 ? `+$${ltvLift.toFixed(2)} vs avg` : `-$${Math.abs(ltvLift).toFixed(2)} vs avg`;
+
+      document.getElementById('simRevDisplay').textContent = `$${targetYr2Rev.toLocaleString()}`;
+      document.getElementById('simRevLift').textContent = incrementalRev >= 0 ? `+$${incrementalRev.toLocaleString()} incremental ARR` : `-$${Math.abs(incrementalRev).toLocaleString()} vs avg`;
+
+      document.getElementById('simUsersDisplay').textContent = targetRetained.toLocaleString();
+      document.getElementById('simUsersLift').textContent = savedUsers >= 0 ? `+${savedUsers.toLocaleString()} saved subscribers` : `${savedUsers.toLocaleString()} vs avg`;
+    }
+
+    retentionSlider.addEventListener('input', (e) => updateRetentionSimulator(e.target.value));
+
+    function setRetentionPreset(val) {
+      retentionSlider.value = val;
+      updateRetentionSimulator(val);
+    }
+
+    // ==========================================
+    // 4. COMPETITIVE MATRIX RENDER & FILTERING
+    // ==========================================
+    let activeCategory = 'All';
+    let activePriceTier = 'All';
+    let searchQuery = '';
+    let matrixViewMode = 'cards';
+
+    function setMatrixView(mode) {
+      matrixViewMode = mode;
+      const cardsBtn = document.getElementById('viewCardsBtn');
+      const tableBtn = document.getElementById('viewTableBtn');
+      const cardsGrid = document.getElementById('competitorCardsGrid');
+      const tableWrap = document.getElementById('competitorTableWrapper');
+
+      if (mode === 'cards') {
+        cardsBtn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm transition';
+        tableBtn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition';
+        cardsGrid.classList.remove('hidden');
+        tableWrap.classList.add('hidden');
+      } else {
+        tableBtn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm transition';
+        cardsBtn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition';
+        tableWrap.classList.remove('hidden');
+        cardsGrid.classList.add('hidden');
+      }
+      renderCompetitors();
+    }
+
+    function renderCompetitors() {
+      const filtered = competitorsData.filter((comp) => {
+        const matchCat = activeCategory === 'All' || comp.category === activeCategory;
+        const matchPrice = activePriceTier === 'All' || comp.priceTier === activePriceTier;
+        const q = searchQuery.toLowerCase().trim();
+        const matchSearch = !q ||
+          comp.name.toLowerCase().includes(q) ||
+          comp.category.toLowerCase().includes(q) ||
+          comp.coreTech.toLowerCase().includes(q) ||
+          comp.targetUser.toLowerCase().includes(q) ||
+          comp.summary.toLowerCase().includes(q);
+        return matchCat && matchPrice && matchSearch;
+      });
+
+      const emptyState = document.getElementById('competitorEmptyState');
+      const cardsGrid = document.getElementById('competitorCardsGrid');
+      const tableBody = document.getElementById('competitorTableBody');
+      const tableWrap = document.getElementById('competitorTableWrapper');
+
+      if (filtered.length === 0) {
+        emptyState.classList.remove('hidden');
+        cardsGrid.classList.add('hidden');
+        tableWrap.classList.add('hidden');
+        return;
+      } else {
+        emptyState.classList.add('hidden');
+        if (matrixViewMode === 'cards') {
+          cardsGrid.classList.remove('hidden');
+          tableWrap.classList.add('hidden');
+        } else {
+          tableWrap.classList.remove('hidden');
+          cardsGrid.classList.add('hidden');
+        }
+      }
+
+      // Render Cards
+      cardsGrid.innerHTML = filtered.map((c) => `
+        <div onclick="openCompetitorModal('${c.id}')" class="group cursor-pointer bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 hover:border-indigo-500 dark:hover:border-indigo-500 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4 print-break-inside">
+          <div class="space-y-3">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 mb-1.5">
+                  ${c.category}
+                </span>
+                <h3 class="text-lg font-extrabold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+                  ${c.name}
+                </h3>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-bold shrink-0 ${c.threatBadge}">
+                Threat: ${c.threatLevel}
+              </span>
+            </div>
+
+            <div class="text-xs font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50/70 dark:bg-emerald-950/40 px-3 py-1.5 rounded-xl border border-emerald-200/60 dark:border-emerald-800/50">
+              Pricing: ${c.priceDisplay}
+            </div>
+
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <strong class="text-slate-800 dark:text-slate-200">Core Tech:</strong> ${c.coreTech}
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-500 dark:text-slate-400 truncate max-w-[65%]">${c.targetUser}</span>
+            <span class="font-bold text-indigo-600 dark:text-indigo-400 group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-1">
+              Inspect SWOT
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      `).join('');
+
+      // Render Table Rows
+      tableBody.innerHTML = filtered.map((c) => `
+        <tr onclick="openCompetitorModal('${c.id}')" class="cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/60 transition">
+          <td class="py-3.5 px-4 font-bold text-slate-900 dark:text-white">${c.name}</td>
+          <td class="py-3.5 px-4">
+            <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300">${c.category}</span>
+          </td>
+          <td class="py-3.5 px-4 font-semibold text-emerald-700 dark:text-emerald-400">${c.priceDisplay}</td>
+          <td class="py-3.5 px-4 text-slate-600 dark:text-slate-300 max-w-xs">${c.coreTech}</td>
+          <td class="py-3.5 px-4">
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold ${c.threatBadge}">${c.threatLevel}</span>
+          </td>
+          <td class="py-3.5 px-4 text-right font-semibold text-indigo-600 dark:text-indigo-400">View →</td>
+        </tr>
+      `).join('');
+    }
+
+    // Category Pill Click Events
+    document.querySelectorAll('.cat-pill').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cat-pill').forEach((b) => {
+          b.className = 'cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition';
+        });
+        btn.className = 'cat-pill active px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-600 text-white shadow-sm transition';
+        activeCategory = btn.getAttribute('data-category');
+        renderCompetitors();
+      });
+    });
+
+    document.getElementById('competitorSearchInput').addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderCompetitors();
+    });
+
+    document.getElementById('priceTierSelect').addEventListener('change', (e) => {
+      activePriceTier = e.target.value;
+      renderCompetitors();
+    });
+
+    function resetCompetitorFilters() {
+      activeCategory = 'All';
+      activePriceTier = 'All';
+      searchQuery = '';
+      document.getElementById('competitorSearchInput').value = '';
+      document.getElementById('priceTierSelect').value = 'All';
+      document.querySelectorAll('.cat-pill').forEach((b, idx) => {
+        b.className = idx === 0
+          ? 'cat-pill active px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-600 text-white shadow-sm transition'
+          : 'cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition';
+      });
+      renderCompetitors();
+    }
+
+    // Competitor Slide-Over Modal
+    function openCompetitorModal(id) {
+      const comp = competitorsData.find((item) => item.id === id);
+      if (!comp) return;
+
+      const content = document.getElementById('competitorModalContent');
+      content.innerHTML = `
+        <div class="space-y-4">
+          <div class="flex items-center justify-between gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">
+              ${comp.category}
+            </span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold ${comp.threatBadge}">
+              Strategic Threat: ${comp.threatLevel}
+            </span>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white">${comp.name}</h3>
+            <p class="text-sm font-semibold text-emerald-600 dark:text-emerald-400 mt-1">${comp.priceDisplay} • ${comp.targetUser}</p>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-800/70 p-4 rounded-2xl border border-slate-200 dark:border-slate-700">
+            ${comp.summary}
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-4 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/60 space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300">Key Competitive Strengths</h4>
+            <ul class="space-y-1.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 list-disc pl-5">
+              ${comp.strengths.map((s) => `<li>${s}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-amber-50/70 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300">Exploitable Vulnerabilities</h4>
+            <ul class="space-y-1.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 list-disc pl-5">
+              ${comp.vulnerabilities.map((v) => `<li>${v}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-indigo-600 text-white space-y-1">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-200">Our Strategic Wedge</span>
+            <p class="text-xs sm:text-sm font-medium leading-relaxed">${comp.strategicTakeaway}</p>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('competitorModalBackdrop').classList.remove('hidden');
+    }
+
+    function closeCompetitorModal() {
+      document.getElementById('competitorModalBackdrop').classList.add('hidden');
+    }
+
+    // ==========================================
+    // 5. STRATEGIC TRENDS INTERACTIVE EXPLORER
+    // ==========================================
+    let activeTrendId = 'trend1';
+
+    function renderTrends() {
+      const listContainer = document.getElementById('trendTabsList');
+      const detailCard = document.getElementById('trendDetailCard');
+
+      listContainer.innerHTML = trendsData.map((t) => {
+        const isActive = t.id === activeTrendId;
+        return `
+          <button type="button" onclick="selectTrend('${t.id}')" class="w-full text-left p-4 rounded-2xl border transition-all ${
+            isActive
+              ? 'bg-indigo-600 text-white border-indigo-600 shadow-md'
+              : 'bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-800 hover:border-indigo-400'
+          }">
+            <span class="text-[11px] font-bold uppercase tracking-wider block ${isActive ? 'text-indigo-200' : 'text-indigo-600 dark:text-indigo-400'}">
+              ${t.badge}
+            </span>
+            <span class="text-sm font-bold mt-0.5 block">${t.title}</span>
+          </button>
+        `;
+      }).join('');
+
+      const activeTrend = trendsData.find((t) => t.id === activeTrendId);
+      detailCard.innerHTML = `
+        <div class="space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">
+              ${activeTrend.badge}
+            </span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+              Signal: ${activeTrend.metric}
+            </span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+            ${activeTrend.title}
+          </h3>
+
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            ${activeTrend.summary}
+          </p>
+
+          <div class="space-y-2 pt-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Market & Product Implications</h4>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 list-disc pl-5">
+              ${activeTrend.implications.map((imp) => `<li>${imp}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white space-y-1">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-100">White-Space Product Opportunity</span>
+          <p class="text-xs sm:text-sm font-medium leading-relaxed">${activeTrend.opportunity}</p>
+        </div>
+      `;
+    }
+
+    function selectTrend(id) {
+      activeTrendId = id;
+      renderTrends();
+    }
+
+    // ==========================================
+    // 6. INTERACTIVE SWOT & ROADMAP COUNTER
+    // ==========================================
+    function selectSwot(quadrant) {
+      document.querySelectorAll('.swot-card').forEach((card) => {
+        card.classList.remove('border-2', 'border-emerald-500/80', 'border-amber-500/80', 'border-indigo-500/80', 'border-rose-500/80');
+        card.classList.add('border', 'border-slate-200', 'dark:border-slate-800');
+      });
+
+      const activeCard = document.getElementById(`swot-${quadrant}`);
+      activeCard.classList.remove('border', 'border-slate-200', 'dark:border-slate-800');
+      activeCard.classList.add('border-2');
+
+      if (quadrant === 'strengths') activeCard.classList.add('border-emerald-500/80');
+      if (quadrant === 'weaknesses') activeCard.classList.add('border-amber-500/80');
+      if (quadrant === 'opportunities') activeCard.classList.add('border-indigo-500/80');
+      if (quadrant === 'threats') activeCard.classList.add('border-rose-500/80');
+
+      const cm = swotCountermeasures[quadrant];
+      document.getElementById('swotBannerTag').textContent = cm.tag;
+      document.getElementById('swotBannerText').textContent = cm.text;
+    }
+
+    function updateRoadmapCount() {
+      const checkboxes = document.querySelectorAll('.roadmap-cb');
+      const checkedCount = Array.from(checkboxes).filter((cb) => cb.checked).length;
+      document.getElementById('roadmapProgressText').textContent = `${checkedCount} / ${checkboxes.length} Approved`;
+    }
+
+    // ==========================================
+    // 7. INITIALIZE ON WINDOW LOAD
+    // ==========================================
+    window.addEventListener('DOMContentLoaded', () => {
+      initCharts();
+      updateRetentionSimulator(30.3);
+      renderCompetitors();
+      renderTrends();
+      updateRoadmapCount();
+    });
+  </script>
+</body>
+</html><!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -873,4 +2496,4 @@
     </script>
 </body>
 
-</html>
+</html> -->
